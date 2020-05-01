@@ -131,7 +131,7 @@ module Greenlight
     # DEFAULTS
 
     # Default branding image if the user does not specify one
-    config.branding_image_default = "https://raw.githubusercontent.com/hoang000147/greenlight/v2-alpha/app/assets/images/HADTech-logo.jpg"
+    config.branding_image_default = "https://raw.githubusercontent.com/hoang000147/greenlight/8a3ce2b172e995952124a2f7dc4d3097da14a841/app/assets/images/HADTech_Logo.png"
 
     # Default primary color if the user does not specify one
     config.primary_color_default = "#467fcf"
