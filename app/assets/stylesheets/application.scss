@@ -56,7 +56,8 @@ html, body {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: #f5f7fb;
+
 }
 
 a {
@@ -74,16 +75,27 @@ a {
 }
 
 .header {
-  height: $header-height;
+  /*position: fixed;
+  right : 0;
+  left : 0;
+  z-index: 999;*/
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height : $header-height;
+  z-index: 999;
 }
 
 .wrapper {
   position: relative;
-  height: auto;
-  min-height: calc(100% - #{$header-height} - #{$footer-height});
+  height: auto ;
+  min-height: calc(100% - #{$header-height} - #{$footer-height} - 25px);
+  /*padding-top: 45px;*/
 }
 
 .footer {
+  position: absolute;
+  top: 95%;
   height: $footer-height;
   width: 100%;
 }
@@ -134,10 +146,12 @@ a {
 }
 
 .cookies-banner {
+  height: $footer-height;
   color: white;
   background-color: $button-color-blue;
+
   #cookies-agree-button {
-    margin: 0;
+    background-color: green !important;
   }
 }
 
