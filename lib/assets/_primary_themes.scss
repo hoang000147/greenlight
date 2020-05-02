@@ -37,6 +37,7 @@
 
 a {
   color: $primary-color !important;
+  //color: #DC3545 !important;
 }
 
 .oauth-signin {
@@ -81,7 +82,8 @@ a {
 }
 
 .dropdown-item {
-  color: #6e7687 !important;
+  //color: #6e7687 !important;
+  color: $primary-color !important;
   &:hover {
     color: $primary-color !important;
     background-color: $primary-color-lighten !important;
@@ -95,6 +97,10 @@ a {
     color: $primary-color !important;
     background-color: $primary-color-lighten !important;
   }
+
+  .onwhite {
+    color: #000000 !important;
+  }
 }
 
 input:focus, select:focus {
@@ -106,7 +112,7 @@ input:focus, select:focus {
   background-color: $primary-color-lighten !important;
 
   &, .list-group-item.active * {
-    color: $primary-color !important;
+    color: #36393f !important;
   }
 
   &.sort-disabled {

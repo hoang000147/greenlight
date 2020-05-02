@@ -134,13 +134,13 @@ module Greenlight
     config.branding_image_default = "https://raw.githubusercontent.com/hoang000147/greenlight/8a3ce2b172e995952124a2f7dc4d3097da14a841/app/assets/images/HADTech_Logo.png"
 
     # Default primary color if the user does not specify one
-    config.primary_color_default = "#467fcf"
+    config.primary_color_default = "#dc3545"
 
     # Default primary color lighten if the user does not specify one
-    config.primary_color_lighten_default = "#e8eff9"
+    config.primary_color_lighten_default = "#ffa4a1"
 
     # Default primary color darken if the user does not specify one
-    config.primary_color_darken_default = "#316cbe"
+    config.primary_color_darken_default = "#b82734"
 
     # Default registration method if the user does not specify one
     config.registration_method_default = if ENV["DEFAULT_REGISTRATION"] == "invite"
