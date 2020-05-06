@@ -31,10 +31,6 @@
         </div>
       </div>
     </div>
-    <br>
-    <%= f.label t("settings.account.provider"), class: "form-label" %>
-    <%= f.text_field :provider, class: "form-control", readonly: "" %>
-    <br>
     <%= f.label t("settings.account.language"), class: "form-label" %>
     <%= f.select :language, language_options, {}, { class: "form-control custom-select" } %>
 
@@ -60,6 +56,7 @@
     <% end %>
     <%= f.hidden_field :role_ids, id: "user_role_ids", value: @user.roles.by_priority.pluck(:id).uniq %>
 
+
     <%= f.label t("settings.account.image"), class: "form-label mt-5" %>
     <div class="row">
       <div class="col-2">
@@ -69,13 +66,19 @@
           <span class="avatar avatar-xxl mr-5 mt-2" style="background-image: url(<%= @user.image %>)"></span>
         <% end %>
       </div>
+
       <div class="col-10 mt-5">
         <%= f.text_field :image, class: "form-control #{form_is_invalid?(@user, :image)}", placeholder: t("settings.account.image_url") %>
       </div>
     </div>
   </div>
+  
+  <%= f.label t("settings.account.provider"), class: "form-label" %>
+  <% #= f.label t("greenlight"), class: "form-label" %>
+  <% #= f.text_field :provider, class: "form-control", readonly: "" %>
+
   <div class="card-footer">
-    <%= f.submit t("update"), class: "btn btn-primary float-right ml-4" %>
+    <%= f.submit t("update"), class: "btn btn-primary float-right ml-4" %>   
 
     <% if can_reset_password %>
       <%= link_to "Reset user password", admin_reset_path(user_uid: @user.uid), class: "btn btn-primary float-right" %>

@@ -515,7 +515,7 @@ en:
     account:
       fullname: Full name
       language: Language
-      provider: Provider
+      provider: Provided by Greenlight
       image: Image
       image_url: Profile Image URL
       roles: User Roles
