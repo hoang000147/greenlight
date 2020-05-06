@@ -34,7 +34,7 @@
         </div>
         <h4 class="text-left mb-6"><%= @room.sessions %> <%= t("room.sessions") %> | <%= @recordings.length %> <%= t("room.recordings") %></h4>
         <% unless exceeds_limit %>
-          <label class="form-label"><%= t("room.invite_participants") %></label>
+          <label class="custom-label"><%= t("room.invite_participants") %></label>
           <div class="row">
             <div class="col-lg-7 col-md-12 mt-2">
               <div class="input-icon invite-link-input">
@@ -70,7 +70,7 @@
           <%= button_to t("room.join"), room_path(@room), class: "btn btn-primary btn-block px-7 start-button float-right", "data-disable": "" %>
         <% else %>
           <% unless exceeds_limit %>
-            <%= button_to t("room.start"), start_room_path(@room), class: "btn btn-primary btn-block px-7 start-button float-right", "data-disable": "" %>
+            <%= button_to t("room.start"), start_room_path(@room), class: "btn btn-outline-danger btn-block px-7 start-button float-right", "data-disable": "" %>
           <% end %>
         <% end %>
       </div>

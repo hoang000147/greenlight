@@ -59,9 +59,20 @@
 
 .room-block {
   &:not(.current) {
-    .stamp {
-      opacity: 0.5;
+    .table:hover{
+      h4, i{
+        color: #D4D4D4;
+      }
+      //background-color: #34373c;
+      //opacity: 200%;
     }
+    h4, i{
+      color: #8F8F8F;
+    }
+    i.fas.fa-chalkboard-teacher{
+      color: $background-color;
+    }
+    //opacity: 80%;
   }
 }
 

@@ -59,26 +59,56 @@ html, body {
   background-color: $background-color;
 
 }
+.room-block {
+  &:not(.current) {
+    .table:hover{
+      i.fas.fa-chalkboard-teacher{
+        color: #D4D4D4;
+        }
+      background-color: #40444b;
+      }
+    }    
+  }
 
 a {
-  text-decoration: !important;
+  text-decoration: none !important;
   cursor: pointer;
 }
 
-p {
+h1, h2, label.custom-label, p.lead.offset-lg-2.col-lg-8.col-sm-12{
   color : white;
+}
+
+p.subtitle-custom {
+  color : white;
+  font-size : 25px;
+}
+
+label.form-label {
+  color : $background-color;
+}
+
+p.subtitle {
+  color : $primary-color;
+}
+
+.custom1 {
+  color : #FC1D25;
+  //border: 3px solid #73AD21;
 }
 
 h1 {
-  color : white;
+  font-weight : bold;
 }
 
-h2 {
-  color : white;
+i.fas.fa-home.align-top.home-indicator.ml-2, i.fas.fa-user, i.fas.fa-key, i.fas.fa-trash-alt { //icon
+  //color : white;
 }
 
-h4 {
-  color : white;
+div.dropdown-menu {
+  background-color: $background-color;
+  border-color: black;
+  box-shadow:2px 2px 5px black; 
 }
 
 .dotted_underline {
@@ -107,8 +137,8 @@ h4 {
 }
 
 .footer {
-  position: static;
-  top: 100%;
+  position: relative;
+  top: 25px;
   height: $footer-height;
   width: 100%;
 }
@@ -146,7 +176,7 @@ h4 {
 }
 
 .force-text-normal {
-  color: #495057;
+  color: #white;
 }
 
 .terms {
