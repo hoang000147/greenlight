@@ -57,12 +57,43 @@
   padding-top: 12px;
 }
 
+.room-block {
+  &:not(.current) {
+    .table:hover{
+      h4, i{
+        color: #D4D4D4;
+      }
+      i.fas.fa-chalkboard-teacher, i.fas.fa-home{
+      color: #D4D4D4;
+      }
+    }
+    h4, i{
+      color: #8F8F8F;
+    }
+    i.fas.fa-chalkboard-teacher, i.fas.fa-home{
+      color: $background-color;
+    }
+    opacity: 90%;
+  }
+}
+
 #create-room-block {
   border: 1px dashed lightgray;
-
+  h4.my-2{
+      color: #8F8F8F;
+    }
+  i.fas.fa-plus{
+      color: $background-color;
+    }
   &:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.04);
+    h4.my-2{
+      color: #D4D4D4;
+    }
+    background-color: #40444b; //primary color lighten
+    i.fas.fa-plus{
+      color: #D4D4D4;
+    }
   }
 }
 
@@ -100,3 +131,4 @@
 .remove-shared {
   text-decoration: line-through;
 }
+

@@ -37,6 +37,7 @@
 
 a {
   color: $primary-color !important;
+  //color: #DC3545 !important;
 }
 
 .oauth-signin {
@@ -63,7 +64,7 @@ a {
 
 .header {
   & .avatar {
-    background-color: $primary-color !important;
+    background-color: $primary-color-lighten !important;
     color: white !important;
   }
 
@@ -81,7 +82,8 @@ a {
 }
 
 .dropdown-item {
-  color: #6e7687 !important;
+  //color: #6e7687 !important;
+  color: $primary-color !important;
   &:hover {
     color: $primary-color !important;
     background-color: $primary-color-lighten !important;
@@ -94,6 +96,10 @@ a {
   &:active, &.active {
     color: $primary-color !important;
     background-color: $primary-color-lighten !important;
+  }
+
+  .onwhite {
+    color: #000000 !important;
   }
 }
 
@@ -192,5 +198,17 @@ input:focus, select:focus {
 .manage-users-tab {
   &.selected {
     @extend .btn-primary;
+  }
+}
+
+.room-block {
+  &.current {
+    //box-shadow: 2px 2px 7px white;
+    h4, i{
+    color: white;
+    }
+    .table{
+      background-color: #393c43;
+    }
   }
 }

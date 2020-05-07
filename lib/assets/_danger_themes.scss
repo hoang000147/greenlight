@@ -1,0 +1,203 @@
+.btn {
+  &:focus {
+    box-shadow: 0 0 0 2px $danger-color-lighten;
+  }
+}
+
+.btn-primary,
+.btn-primary:visited,
+.btn-primary i {
+  background-color: $danger-color !important;
+  border-color: $danger-color !important;
+  color: white !important;
+}
+
+.btn-primary:active,
+.btn-primary:active:focus,
+.btn-primary:active:hover,
+.btn-primary:hover,
+.btn-primary:hover i {
+  background-color: $danger-color-darken !important;
+  border-color: $danger-color-darken !important;
+  color: white !important;
+}
+
+.btn-primary:focus {
+  background-color: $danger-color-darken !important;
+  border-color: $danger-color-darken !important;
+  color: white !important;
+  box-shadow: 0 0 0 2px $danger-color-lighten !important;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before{
+  background-color: $danger-color !important;
+  border-color: $danger-color !important;
+  color: white !important;
+}
+
+a {
+  color: $danger-color !important;
+  //color: #DC3545 !important;
+}
+
+.oauth-signin {
+  color: white !important;
+
+  &:hover * {
+    color: white !important;
+  }
+}
+
+.btn-outline-primary {
+  border-color: $danger-color !important;
+  color: $danger-color !important;
+
+  &:hover {
+    background: $danger-color !important;
+    color: white !important;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px $danger-color-lighten !important;
+  }
+}
+
+.header {
+  & .avatar {
+    background-color: $danger-color !important;
+    color: white !important;
+  }
+
+  & a:hover:not(.btn) {
+    color: $danger-color !important;
+  }
+
+  & .header-nav {
+    border-color: $danger-color !important;
+  }
+
+  & .header-nav.active {
+    color: $danger-color !important;
+  }
+}
+
+.dropdown-item {
+  color: #6e7687 !important;
+  &:hover {
+    color: $danger-color !important;
+    background-color: $danger-color-lighten !important;
+    &.sort-disabled {
+      background: #e6e6e6 !important;
+      color: rgb(110, 118, 135) !important;
+      opacity: 0.9;
+    }
+  }
+  &:active, &.active {
+    color: $danger-color !important;
+    background-color: $danger-color-lighten !important;
+  }
+}
+
+input:focus, select:focus {
+  box-shadow: 0 0 5px $danger-color !important;
+  border-color: $danger-color !important;
+}
+
+.list-group-item.active {
+  background-color: $danger-color-lighten !important;
+
+  &, .list-group-item.active * {
+    color: $danger-color !important;
+  }
+
+  &.sort-disabled {
+    background: #e6e6e6 !important;
+    color: rgb(110, 118, 135) !important;
+    opacity: 0.9 !important;
+  }
+}
+
+.text-primary {
+  color: $danger-color !important;
+}
+
+.bg-primary {
+  background-color: $danger-color !important;
+  color: white !important;
+}
+
+.btn-danger {
+  color: white !important;
+}
+
+#clear-search {
+  &:hover {
+    color: $danger-color-darken !important;
+  }
+}
+
+.pagination {
+  .page-item {
+    &.active a {
+      color:white !important;
+      background-color: $danger-color !important;
+    }
+
+    & a {
+      color: $danger-color !important;
+      border-color: $danger-color !important;
+    }
+
+    & a:hover {
+      background-color: $danger-color-lighten !important;
+    }
+
+    & a:focus {
+      box-shadow: 0 0 3px $danger-color !important;
+    }
+  }
+}
+
+.primary-regular {
+  background-color: $danger-color !important;
+  border-color: $danger-color !important;
+  color: white !important;
+}
+
+.primary-lighten {
+  background-color: $danger-color-lighten !important;
+  border-color: $danger-color-lighten !important;
+  color: $danger-color !important;
+}
+
+.primary-darken {
+  background-color: $danger-color-darken !important;
+  border-color: $danger-color-darken !important;
+  color: white !important;
+}
+
+.custom-switch-input:checked ~ .custom-switch-indicator {
+  background-color: $danger-color !important;
+  border-color: $danger-color-darken !important;
+}
+
+.custom-switch-input:focus ~ .custom-switch-indicator {
+  box-shadow: 0 0 0 2px $danger-color-lighten;
+  border-color: $danger-color-darken !important;
+}
+
+.custom-control-label::before {
+  border-color: $danger-color-darken !important;
+}
+
+.manage-users-tab {
+  &.selected {
+    @extend .btn-danger;
+  }
+}
+
+.room-block {
+  &.current {
+    box-shadow: 0 0 10px danger-color-lighten;
+  }
+}

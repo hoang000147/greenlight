@@ -261,7 +261,7 @@ en:
       start: Start searching...
   landing:
     about: "%{href} is a simple front-end for your BigBlueButton open-source web conferencing server. You can create your own rooms to host sessions, or join others using a short and convenient link."
-    welcome: Welcome to BigBlueButton.
+    welcome: Welcome to HADtech.
     video: Watch our tutorial on using Greenlight
     upgrade: Show me how to upgrade to 2.0!
     version: We've released a new version of Greenlight, but your database isn't compatible.
@@ -515,7 +515,7 @@ en:
     account:
       fullname: Full name
       language: Language
-      provider: Provider
+      provider: Provided by Greenlight
       image: Image
       image_url: Profile Image URL
       roles: User Roles
