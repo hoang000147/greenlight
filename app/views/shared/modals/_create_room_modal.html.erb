@@ -26,7 +26,7 @@
           <%= form_for(:room, url: rooms_path) do |f| %>
             <div class="input-icon mb-2">
               <span class="input-icon-addon">
-                <i class="fas fa-chalkboard-teacher"></i>
+                <i class="fas fa-info"></i>
               </span>
               <%= f.text_field :name, id: "create-room-name", class: "form-control text-center", value: "", placeholder: t("modal.create_room.name_placeholder"), autocomplete: :off %>
               <div class="invalid-feedback text-left"><%= t("modal.create_room.not_blank") %></div>
