@@ -20,13 +20,15 @@
   background-color: $primary-color-darken !important;
   border-color: $primary-color-darken !important;
   color: white !important;
+  border-radius:25px;
+  transition: 0.5s;
 }
 
 .btn-primary:focus {
   background-color: $primary-color-darken !important;
   border-color: $primary-color-darken !important;
   color: white !important;
-  box-shadow: 0 0 0 2px $primary-color-lighten !important;
+  //box-shadow: 0 0 0 2px $primary-color-lighten !important;
 }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before{

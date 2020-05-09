@@ -52,28 +52,40 @@
 }
 
 html, body {
-  font-family: "Source Sans Pro" !important;
+  font-family:  "Comic Sans MS", "cursive", "serif" !important;
   position: relative;
   width: 100%;
   height: 100%;
   background-color: $background-color;
+<<<<<<< HEAD
 
 
+=======
+  font-size: 15px;
+>>>>>>> 5dfaa083eafd511e8f1f9a6c78ac60923be6d5d4
 }
+
 .room-block {
   &:not(.current) {
     .table:hover{
-      i.fas.fa-chalkboard-teacher{
+      i.fas.fa-hashtag, i.fas.fa-star{
         color: #D4D4D4;
         }
       background-color: #40444b;
       }
+    i.fas.fa-star, i.fas.fa-hashtag{
+      color: $background-color;
+    }
     }    
   }
 
 a {
   text-decoration: none !important;
   cursor: pointer;
+}
+
+h4 {
+  color: #8f8f8f; //the same with room block
 }
 
 h1, h2, label.custom-label, p.lead.offset-lg-2.col-lg-8.col-sm-12{
@@ -86,7 +98,7 @@ p.subtitle-custom {
 }
 
 label.form-label {
-  color : $background-color;
+  color : $primary-color;
 }
 
 p.subtitle {
@@ -132,8 +144,14 @@ div.dropdown-menu {
 .wrapper {
   position: relative;
   height: auto ;
+<<<<<<< HEAD
   //min-height: calc(100% - #{$header-height} - #{$footer-height} - 25px);
   min-height: 100%;
+=======
+  min-height: calc(100% - #{$header-height} - #{$footer-height} - 25px);
+  /*padding-top: 45px;*/
+  //background-image: url(https://raw.githubusercontent.com/hoang000147/greenlight/e39734f4005860cf300a84b25a2e150b84ac89a9/app/assets/images/WKbQMt.jpg);
+>>>>>>> 5dfaa083eafd511e8f1f9a6c78ac60923be6d5d4
 }
 
 .footer {
