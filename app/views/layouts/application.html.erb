@@ -61,7 +61,16 @@
   <body class="app-background" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
     <%= render "shared/header" %>
 
-    <div class="sidebar">
+    <%# unless data-controller = "main" %>
+      <% exceeds_limit = current_room_exceeds_limit(@room)%>
+      <% if exceeds_limit%>
+        <div class="alert alert-danger alert-dismissible text-center mb-0">
+          <%= t("room.room_limit_exceeded", difference: @diff) %>
+        </div>
+      <% end %>
+    <%# end %>
+
+    <div class="sidebar col pt-2">
         <ul class="sidebar">
           <br>
             <% current_user.ordered_rooms.each do |room| %>
@@ -86,10 +95,17 @@
               <% end %>             
             <% end %>
 
-
+            <%# unless data-controller = "main" %>
+              <% unless room_limit_exceeded %>
+                <li>
+                  <%= render "rooms/components/create_room_block"%>
+                </li>
+              <% end %>
+            <%# end %>
         </ul>
-  </div>
 
+  </div>
+    <div>
       <% if bigbluebutton_endpoint_default? %>
         <div class="alert alert-icon alert-danger text-center mb-0">
           <div class="flash alert d-inline">

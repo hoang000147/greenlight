@@ -20,7 +20,7 @@
   background-color: $primary-color-darken !important;
   border-color: $primary-color-darken !important;
   color: white !important;
-  border-radius:25px;
+  border-radius:20px;
   transition: 0.5s;
 }
 
@@ -211,44 +211,7 @@ input:focus, select:focus {
     }
     .table{
       background-color: #393c43;
+      border-radius: 15px;
     }
   }
 }
-
-ul.sidebar {
-  list-style-type: none;
-}
-
-.sidebar {
-  //display: block;
-  width: 330px;
-  height: 100vh;
-  padding-left: 0px;
-  float: left;
-  //max-width: px;
-}
-
-.sidebar.active {
-    margin-left: -750px;
-}
-
-a[data-toggle="collapse"] {
-    position: relative;
-}
-
-.dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
-
-/*@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-}*/

@@ -14,17 +14,19 @@
 %>
 
 
- <div data-path="<%= update_settings_path(room) %>" data-room-access-code="<%= room.access_code %>" class="card room-block bg-dark border-secondary mb-3">
-   <div class="card-body p-1">
+ <div data-path="<%= update_settings_path(room) %>" data-room-access-code="<%= room.access_code %>" class="room-block mb-3">
+   <div class="p-0">
     <table class="table table-vcenter text-wrap table-no-border">
       <tbody class="no-border-top">
         <td>
           <span class="stamp stamp-md bg-primary">
+           <small>
             <% if room == current_user.main_room %>
               <i class="fas fa-star"></i>
             <% else %>
               <i class="fas fa-hashtag"></i>
             <% end %>
+           </small>
           </span>
         </td>
         <td>
@@ -34,14 +36,7 @@
            </div>
            <div style="display: none">
              <input class="form-control input-sm w-100 h-4 room-name-editable" value="<%= room.name %>">
-           </div>
-           <div class="small text-muted">
-            <% if room.sessions > 0 %>
-              <i><%= t("room.last_session", session: recording_date(room.last_session)) %></i>
-            <% else %>
-              <i><%= t("room.no_sessions") %></i>
-            <% end %>
-           </div>
+           </div>           
 	        </p>
         </td>
         <td class="text-right">
