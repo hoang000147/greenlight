@@ -28,21 +28,21 @@
           </span>
         </td>
         <td>
-	<p class="font-weight-normal">	
-          <div>
-            <h4 contenteditable="false" class="m-0 force-text-normal room-name-text" ><%= room.name %></h4>
-          </div>
-          <div style="display: none">
-            <input class="form-control input-sm w-100 h-4 room-name-editable" value="<%= room.name %>">
-          </div>
-          <div class="small text-muted">
+	        <p class="font-weight-normal">	
+           <div>
+             <h4 contenteditable="false" class="m-0 force-text-normal room-name-text" ><%= room.name %></h4>
+           </div>
+           <div style="display: none">
+             <input class="form-control input-sm w-100 h-4 room-name-editable" value="<%= room.name %>">
+           </div>
+           <div class="small text-muted">
             <% if room.sessions > 0 %>
               <i><%= t("room.last_session", session: recording_date(room.last_session)) %></i>
             <% else %>
               <i><%= t("room.no_sessions") %></i>
             <% end %>
-          </div>
-	</p>
+           </div>
+	        </p>
         </td>
         <td class="text-right">
           <div class="item-action dropdown" data-display="static">

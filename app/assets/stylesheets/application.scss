@@ -58,6 +58,7 @@ html, body {
   height: 100%;
   background-color: $background-color;
 
+
 }
 .room-block {
   &:not(.current) {
@@ -121,7 +122,6 @@ div.dropdown-menu {
 }
 
 .header {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   height : $header-height;
@@ -132,13 +132,13 @@ div.dropdown-menu {
 .wrapper {
   position: relative;
   height: auto ;
-  min-height: calc(100% - #{$header-height} - #{$footer-height} - 25px);
-  /*padding-top: 45px;*/
+  //min-height: calc(100% - #{$header-height} - #{$footer-height} - 25px);
+  min-height: 100%;
 }
 
 .footer {
   position: relative;
-  top: 25px;
+  top: 160px;
   height: $footer-height;
   width: 100%;
 }

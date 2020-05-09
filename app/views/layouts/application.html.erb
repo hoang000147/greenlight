@@ -61,7 +61,35 @@
   <body class="app-background" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
     <%= render "shared/header" %>
 
-    <div class="wrapper">
+    <div class="sidebar">
+        <ul class="sidebar">
+          <br>
+            <% current_user.ordered_rooms.each do |room| %>
+              <li>
+                <div class=" col">
+                  <%= link_to room do %>
+                    <%= render "rooms/components/room_block", room: room %>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
+            
+            <% if shared_access_allowed %>
+              <% current_user.shared_rooms.each do |room| %>
+                <li>
+                  <div class="col">
+                    <%= link_to room do %>
+                      <%= render "rooms/components/shared_room_block", room: room %>
+                    <% end %>
+                  </div>
+                </li>
+              <% end %>             
+            <% end %>
+
+
+        </ul>
+  </div>
+
       <% if bigbluebutton_endpoint_default? %>
         <div class="alert alert-icon alert-danger text-center mb-0">
           <div class="flash alert d-inline">

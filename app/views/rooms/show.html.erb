@@ -20,8 +20,50 @@
   </div>
 <% end %>
 <div class="background pb-1">
+  
+  <!--div class="col-xl-3 sidebar">
+        <ul class="sidebar">
+          <br>
+            <% current_user.ordered_rooms.each do |room| %>
+              <li>
+                <div class=" col">
+                  <%= link_to room do %>
+                    <%= render "rooms/components/room_block", room: room %>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
+            
+            <% if shared_access_allowed %>
+              <% current_user.shared_rooms.each do |room| %>
+                <li>
+                  <div class="col-md-12">
+                    <%= link_to room do %>
+                      <%= render "rooms/components/shared_room_block", room: room %>
+                    <% end %>
+                  </div>
+                </li>
+              <% end %>             
+            <% end %>
+            <% unless room_limit_exceeded %>
+              <li>
+                <%= render "rooms/components/create_room_block"%>
+              </li>
+            <% end %>
+
+        </ul>
+  </div-->
+
+
   <div class="container">
-    <div class="row pt-7 pt-sm-9">
+            
+
+    <div class="row pt-7">
+      <div class="container-fluid">
+
+            
+
+        </div>
       <div class="col-lg-8 col-sm-12">
         <div id="room-title" class="display-3 form-inline <%= 'edit_hover_class' if current_user.main_room != @room %>" data-path="<%= update_settings_path(@room) %>">
           <% if current_user.main_room == @room %>
@@ -76,7 +118,7 @@
       </div>
     </div>
 
-    <div id="room_block_container" class="row pt-7 pb-5">
+    <!--div id="room_block_container" class="row pt-7 pb-5">
       <% current_user.ordered_rooms.each do |room| %>
         <div class="col-lg-4 col-md-6 col-sm-12">
           <%= link_to room do %>
@@ -98,7 +140,7 @@
       <% unless room_limit_exceeded %>
         <%= render "rooms/components/create_room_block"%>
       <% end %>
-    </div>
+    </div-->
   </div>
 </div>
 

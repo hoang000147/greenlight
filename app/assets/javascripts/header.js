@@ -34,3 +34,15 @@ $(document).on('turbolinks:load', function(){
       $("#user-avatar").show()
     })
 })
+
+// toggle
+$(document).ready(function () {
+  $('#sidebarCollapse').on('click', function () {
+      $('.sidebar').toggleClass('active');
+      var temp = document.getElementById("sidebarCollapse");
+      if (temp.textContent == "Show Rooms")
+        temp.textContent = "Hide Rooms";
+      else temp.textContent = "Show Rooms";
+      //temp.getElementById("span").textContent="Show Room";
+  });
+});

@@ -212,3 +212,41 @@ input:focus, select:focus {
     }
   }
 }
+
+ul.sidebar {
+  list-style-type: none;
+}
+
+.sidebar {
+  //display: block;
+  width: 330px;
+  height: 100vh;
+  padding-left: 0px;
+  float: left;
+  //max-width: px;
+}
+
+.sidebar.active {
+    margin-left: -750px;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+/*@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}*/
