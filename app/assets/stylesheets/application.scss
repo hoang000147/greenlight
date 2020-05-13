@@ -264,11 +264,11 @@ ul.sidebar {
 
 .sidebar {
   perspective: 1500px;
-  width: 370px;
+  //width: 370px;
   height: 100vh;
   padding-left: 0px;
   float: left;
-  max-width: 500px;
+  //max-width: 500px;
   background-color: #2f3038;
   z-index: 900;
   transition: all 0.7s cubic-bezier(0.945, 0.020, 0.270, 0.665);
@@ -305,3 +305,9 @@ a[data-toggle="collapse"] {
         margin-left: 0;
     }
 }*/
+
+@media (max-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+}
