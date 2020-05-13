@@ -103,4 +103,14 @@ module ApplicationHelper
   rescue URI::InvalidURIError
     false
   end
+
+  def current_room_exceeds_limit(room)
+    # Get how many rooms need to be deleted to reach allowed room number
+    limit = @settings.get_value("Room Limit").to_i
+
+    return false if current_user&.has_role?(:admin) || limit == 15
+
+    @diff = current_user.rooms.count - limit
+    @diff.positive? && current_user.rooms.pluck(:id).index(room.id) + 1 > limit
+  end
 end

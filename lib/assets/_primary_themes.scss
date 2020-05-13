@@ -20,13 +20,15 @@
   background-color: $primary-color-darken !important;
   border-color: $primary-color-darken !important;
   color: white !important;
+  border-radius:20px;
+  transition: 0.5s;
 }
 
 .btn-primary:focus {
   background-color: $primary-color-darken !important;
   border-color: $primary-color-darken !important;
   color: white !important;
-  box-shadow: 0 0 0 2px $primary-color-lighten !important;
+  //box-shadow: 0 0 0 2px $primary-color-lighten !important;
 }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before{
@@ -64,7 +66,7 @@ a {
 
 .header {
   & .avatar {
-    background-color: $primary-color !important;
+    background-color: $primary-color-lighten !important;
     color: white !important;
   }
 
@@ -112,7 +114,7 @@ input:focus, select:focus {
   background-color: $primary-color-lighten !important;
 
   &, .list-group-item.active * {
-    color: #36393f !important;
+    color: $primary-color !important;
   }
 
   &.sort-disabled {
@@ -203,6 +205,13 @@ input:focus, select:focus {
 
 .room-block {
   &.current {
-    box-shadow: 0 0 10px $primary-color-lighten;
+    //box-shadow: 2px 2px 7px white;
+    h4, i{
+    color: white;
+    }
+    .table{
+      background-color: #393c43;
+      border-radius: 15px;
+    }
   }
 }

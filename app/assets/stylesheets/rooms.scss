@@ -19,8 +19,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 .start-button {
   font-size: 26px !important;
+  size: 20px;
 }
 
 .thumbnail {
@@ -59,19 +62,48 @@
 
 .room-block {
   &:not(.current) {
-    .stamp {
-      opacity: 0.5;
+    .table:hover{
+      h4, i{
+        color: #D4D4D4;
+      }
+      i.fas.fa-chalkboard-teacher, i.fas.fa-home{
+      color: #D4D4D4;
+      }
+      border-radius: 15px;
     }
+    h4, i{
+      color: #8F8F8F;
+    }
+    i.fas.fa-chalkboard-teacher, i.fas.fa-home{
+      color: $background-color;
+    }
+    
   }
+
+  background-color: inherit;
+  
 }
 
 #create-room-block {
   border: 1px dashed lightgray;
-
+  h4.my-2{
+      color: #8F8F8F;
+    }
+  i.fas.fa-plus{
+      color: $background-color;
+    }
   &:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.04);
+    h4.my-2{
+      color: #D4D4D4;
+    }
+    background-color: #40444b; //primary color lighten
+    i.fas.fa-plus{
+      color: #D4D4D4;
+    }
   }
+  background-color: inherit;
+  border-radius: 10px;
 }
 
 .allow-icon-click{
