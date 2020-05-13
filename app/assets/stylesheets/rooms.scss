@@ -141,3 +141,9 @@
   text-decoration: line-through;
 }
 
+.background-image {
+  background-image: url("books.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom;
+}
