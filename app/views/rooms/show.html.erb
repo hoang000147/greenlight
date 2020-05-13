@@ -19,50 +19,9 @@
     <%= t("room.room_limit_exceeded", difference: @diff) %>
   </div>
 <% end %>
-<<<<<<< HEAD
-<div class="background pb-1 background-image">
-  
-  <!--div class="col-xl-3 sidebar">
-        <ul class="sidebar">
-          <br>
-            <% current_user.ordered_rooms.each do |room| %>
-              <li>
-                <div class=" col">
-                  <%= link_to room do %>
-                    <%= render "rooms/components/room_block", room: room %>
-                  <% end %>
-                </div>
-              </li>
-            <% end %>
-            
-            <% if shared_access_allowed %>
-              <% current_user.shared_rooms.each do |room| %>
-                <li>
-                  <div class="col-md-12">
-                    <%= link_to room do %>
-                      <%= render "rooms/components/shared_room_block", room: room %>
-                    <% end %>
-                  </div>
-                </li>
-              <% end %>             
-            <% end %>
-            <% unless room_limit_exceeded %>
-              <li>
-                <%= render "rooms/components/create_room_block"%>
-              </li>
-            <% end %>
 
-        </ul>
-  </div-->
-
-
-  <div class="container">
-            
-
-=======
 <div class="background pb-1">
   <div class="container">        
->>>>>>> 0878cd40579b3a316c646ca1645f863208451c80
     <div class="row pt-7">
       <div class="col-lg-8 col-sm-12">
         <div id="room-title" class="display-3 form-inline <%= 'edit_hover_class' if current_user.main_room != @room %>" data-path="<%= update_settings_path(@room) %>">
