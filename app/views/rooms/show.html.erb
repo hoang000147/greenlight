@@ -19,6 +19,7 @@
     <%= t("room.room_limit_exceeded", difference: @diff) %>
   </div>
 <% end %>
+<<<<<<< HEAD
 <div class="background pb-1 background-image">
   
   <!--div class="col-xl-3 sidebar">
@@ -58,12 +59,11 @@
   <div class="container">
             
 
+=======
+<div class="background pb-1">
+  <div class="container">        
+>>>>>>> 0878cd40579b3a316c646ca1645f863208451c80
     <div class="row pt-7">
-      <div class="container-fluid">
-
-            
-
-        </div>
       <div class="col-lg-8 col-sm-12">
         <div id="room-title" class="display-3 form-inline <%= 'edit_hover_class' if current_user.main_room != @room %>" data-path="<%= update_settings_path(@room) %>">
           <% if current_user.main_room == @room %>
@@ -78,7 +78,7 @@
         <% unless exceeds_limit %>
           <label class="custom-label"><%= t("room.invite_participants") %></label>
           <div class="row">
-            <div class="col-lg-7 col-md-12 mt-2">
+            <div class="col-lg-6 col-md-12 mt-2">
               <div class="input-icon invite-link-input">
                 <span class="input-icon-addon">
                   <i class="fas fa-link"></i>
@@ -86,7 +86,7 @@
                 <input id="invite-url" type="text" class="form-control w-100" value="<%= request.base_url + @room.invite_path %>" readonly="">
               </div>
             </div>
-            <div class="col-lg-5 col-md-12">
+            <div class="col-lg-6 col-md-12">
               <div class="row">
                 <div class="col-sm-4">
                   <a id="copy" class="btn btn-primary btn-block mt-2">
@@ -118,7 +118,7 @@
       </div>
     </div>
 
-    <!--div id="room_block_container" class="row pt-7 pb-5">
+    <div id="room_block_container" class="row pt-7 pb-5">
       <% current_user.ordered_rooms.each do |room| %>
         <div class="col-lg-4 col-md-6 col-sm-12">
           <%= link_to room do %>
@@ -140,7 +140,7 @@
       <% unless room_limit_exceeded %>
         <%= render "rooms/components/create_room_block"%>
       <% end %>
-    </div-->
+    </div>
   </div>
 </div>
 
