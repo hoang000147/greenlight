@@ -58,7 +58,6 @@ html, body {
   height: 100%;
   background-color: $background-color;
   font-size: 15px;
-
 }
 
 .room-block {
@@ -140,20 +139,21 @@ div.dropdown-menu {
 .wrapper {
   position: relative;
   height: auto;
-  //min-height: calc(100% - #{$header-height} - #{$footer-height} - 25px);
+  //min-height: calc(100% - #{$header-height} - #{$footer-height});
   min-height: 100%;
   //min-height: calc(100% - #{$header-height} - #{$footer-height} - 25px);
 }
 
 .footer {
-  /*position: relative;
-  top: 500px;*/
   height: $footer-height;
   width: 100%;
-  clear: both;
-  position: relative;
-  margin-top: -50px;
+  //position: absolute;
+  //top: 400px;
+  //margin-bottom: -#{$header-height};
   z-index: 999;
+  //right: 0;
+  //bottom: 0;
+  //left: 0;
 }
 
 .background {
@@ -259,7 +259,7 @@ table {
 
 ul.sidebar {
   list-style-type: none;
-  zindex: 999;
+  z-index: 900;
 }
 
 .sidebar {

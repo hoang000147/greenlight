@@ -14,9 +14,11 @@
 %>
 
 <div class="header py-4">
-  <button type="button" id="sidebarCollapse" class="btn btn-primary" onClick="toggleSidebar()">
-    <i class="fas fa-align-justify"></i>
-  </button>
+  <% if current_user %>
+    <button type="button" id="sidebarCollapse" class="btn btn-primary" onClick="toggleSidebar()">
+      <i class="fas fa-align-justify"></i>
+    </button>
+  <% end %>
   <div class="container">
     <div class="d-flex">     
       <%= link_to (current_user ? home_page : root_path), class: "header-brand" do %>
