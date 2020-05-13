@@ -20,21 +20,63 @@
   </div>
 <% end %>
 <div class="background pb-1">
+  
+  <!--div class="col-xl-3 sidebar">
+        <ul class="sidebar">
+          <br>
+            <% current_user.ordered_rooms.each do |room| %>
+              <li>
+                <div class=" col">
+                  <%= link_to room do %>
+                    <%= render "rooms/components/room_block", room: room %>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
+            
+            <% if shared_access_allowed %>
+              <% current_user.shared_rooms.each do |room| %>
+                <li>
+                  <div class="col-md-12">
+                    <%= link_to room do %>
+                      <%= render "rooms/components/shared_room_block", room: room %>
+                    <% end %>
+                  </div>
+                </li>
+              <% end %>             
+            <% end %>
+            <% unless room_limit_exceeded %>
+              <li>
+                <%= render "rooms/components/create_room_block"%>
+              </li>
+            <% end %>
+
+        </ul>
+  </div-->
+
+
   <div class="container">
-    <div class="row pt-7 pt-sm-9">
+            
+
+    <div class="row pt-7">
+      <div class="container-fluid">
+
+            
+
+        </div>
       <div class="col-lg-8 col-sm-12">
         <div id="room-title" class="display-3 form-inline <%= 'edit_hover_class' if current_user.main_room != @room %>" data-path="<%= update_settings_path(@room) %>">
           <% if current_user.main_room == @room %>
             <h1 contenteditable=false id="user-text" class="display-3 text-left mb-3 font-weight-400"><%= @room.name %></h1>
-            <a class="enable-click"><i class="fas fa-home align-top home-indicator ml-2" ></i></a>
+            <a class="enable-click"><i class="fas fa-star align-top home-indicator ml-2" ></i></a>
           <% else %>
             <h1 contenteditable=false id="user-text" class="display-3 text-left mb-3 font-weight-400"><%= @room.name %></h1>
-            <a><i id="edit-room" class="fa fa-edit align-top home-indicator ml-2" data-edit-room="<%= @room.uid %>"></i></a>
+            <a><i id="edit-room" class="fas fa-magic align-top home-indicator ml-2" data-edit-room="<%= @room.uid %>"></i></a>
           <% end %>
         </div>
         <h4 class="text-left mb-6"><%= @room.sessions %> <%= t("room.sessions") %> | <%= @recordings.length %> <%= t("room.recordings") %></h4>
         <% unless exceeds_limit %>
-          <label class="form-label"><%= t("room.invite_participants") %></label>
+          <label class="custom-label"><%= t("room.invite_participants") %></label>
           <div class="row">
             <div class="col-lg-7 col-md-12 mt-2">
               <div class="input-icon invite-link-input">
@@ -46,13 +88,13 @@
             </div>
             <div class="col-lg-5 col-md-12">
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                   <a id="copy" class="btn btn-primary btn-block mt-2">
                     <i class="fas fa-copy"></i>
                     <%= t("copy") %>
                   </a>
                 </div>
-                <div class="col-sm-6 pl-0">
+                <div class="col-lg-8 pl-0">
                   <% if Rails.configuration.enable_google_calendar_button %>
                     <a href="<%= google_calendar_path %>" target="__blank" id="schedule" class="btn btn-primary btn-block mt-2">
                       <i class="fas fa-calendar-plus"></i>
@@ -67,16 +109,16 @@
       </div>
       <div class="offset-lg-1 col-lg-3 col-sm-12 force-bottom mt-5">
         <% if @room_running %>
-          <%= button_to t("room.join"), room_path(@room), class: "btn btn-primary btn-block px-7 start-button float-right", "data-disable": "" %>
+          <%= button_to t("room.join"), room_path(@room), class: "btn btn-primary btn-block px-7 start-button float-right btn-sm", "data-disable": "" %>
         <% else %>
           <% unless exceeds_limit %>
-            <%= button_to t("room.start"), start_room_path(@room), class: "btn btn-primary btn-block px-7 start-button float-right", "data-disable": "" %>
+            <%= button_to t("room.start"), start_room_path(@room), class: "btn btn-primary btn-block px-7 start-button float-right btn-md", "data-disable": "" %>
           <% end %>
         <% end %>
       </div>
     </div>
 
-    <div id="room_block_container" class="row pt-7 pb-5">
+    <!--div id="room_block_container" class="row pt-7 pb-5">
       <% current_user.ordered_rooms.each do |room| %>
         <div class="col-lg-4 col-md-6 col-sm-12">
           <%= link_to room do %>
@@ -98,7 +140,7 @@
       <% unless room_limit_exceeded %>
         <%= render "rooms/components/create_room_block"%>
       <% end %>
-    </div>
+    </div-->
   </div>
 </div>
 

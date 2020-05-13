@@ -33,4 +33,26 @@ $(document).on('turbolinks:load', function(){
       $("#user-image").hide()
       $("#user-avatar").show()
     })
+
+  $('#sidebarCollapse').on('click', function () {
+      $('.sidebar').toggleClass('active');
+      /*var temp = document.getElementById("sidebarCollapse");
+      if (temp.textContent == "Show Rooms")
+        temp.textContent = "Hide Rooms";
+      else temp.textContent = "Show Rooms";*/
+      //temp.getElementById("span").textContent="Show Room";
+  });
 })
+
+// toggle
+/*$(document).ready(function () {
+  $('#sidebarCollapse').on('click', function () {
+      $('.sidebar').toggleClass('active');
+      var temp = document.getElementById("sidebarCollapse");
+      if (temp.textContent == "Show Rooms")
+        temp.textContent = "Hide Rooms";
+      else temp.textContent = "Show Rooms";
+      //temp.getElementById("span").textContent="Show Room";
+  });
+});*/
+

@@ -60,32 +60,75 @@
 
   <body class="app-background" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
     <%= render "shared/header" %>
-
     <div class="wrapper">
-      <% if bigbluebutton_endpoint_default? %>
-        <div class="alert alert-icon alert-danger text-center mb-0">
-          <div class="flash alert d-inline">
-            <i class="fas fa-exclamation-triangle"></i>
-            <p class="d-inline"><%= t("test_install",
-              href: link_to(t("docs").downcase, "http://docs.bigbluebutton.org/install/greenlight-v2.html#2-install-greenlight", target: "_blank", rel: "noopener")
-            ).html_safe %>
+      <% if current_user %>
+        <% exceeds_limit = current_room_exceeds_limit(@room)%>
+        <% if exceeds_limit%>
+          <div class="alert alert-danger alert-dismissible text-center mb-0">
+            <%= t("room.room_limit_exceeded", difference: @diff) %>
           </div>
+        <% end %>
+      
+
+        <div class="sidebar col pt-2 active">
+          <ul class="sidebar active">
+            <br>
+              <% current_user.ordered_rooms.each do |room| %>
+                <li>
+                  <div class=" col">
+                    <%= link_to room do %>
+                      <%= render "rooms/components/room_block", room: room %>
+                    <% end %>
+                  </div>
+                </li>
+              <% end %>
+              
+              <% if shared_access_allowed %>
+                <% current_user.shared_rooms.each do |room| %>
+                  <li>
+                    <div class="col">
+                      <%= link_to room do %>
+                        <%= render "rooms/components/shared_room_block", room: room %>
+                      <% end %>
+                    </div>
+                  </li>
+                <% end %>             
+              <% end %>           
+              
+              <% unless room_limit_exceeded %>
+                <li>
+                  <%= render "rooms/components/create_room_block"%>
+                </li>
+              <% end %>
+          </ul>
         </div>
       <% end %>
-
-      <% unless Rails.configuration.banner_message.blank? %>
-        <div class="alert alert-icon alert-danger text-center mb-0">
-          <div class="flash alert d-inline">
-            <p class="d-inline"><%= Rails.configuration.banner_message %></p>
+    
+      <div>
+        <% if bigbluebutton_endpoint_default? %>
+          <div class="alert alert-icon alert-danger text-center mb-0">
+            <div class="flash alert d-inline">
+              <i class="fas fa-exclamation-triangle"></i>
+              <p class="d-inline"><%= t("test_install",
+                href: link_to(t("docs").downcase, "http://docs.bigbluebutton.org/install/greenlight-v2.html#2-install-greenlight", target: "_blank", rel: "noopener")
+              ).html_safe %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
 
-      <%= render 'shared/flash_messages' unless flash.empty? %>
+        <% unless Rails.configuration.banner_message.blank? %>
+          <div class="alert alert-icon alert-danger text-center mb-0">
+            <div class="flash alert d-inline">
+              <p class="d-inline"><%= Rails.configuration.banner_message %></p>
+            </div>
+          </div>
+        <% end %>
 
-      <%= yield %>
+        <%= render 'shared/flash_messages' unless flash.empty? %>
+
+        <%= yield %>
+      </div>
     </div>
-
-    <%= render "shared/footer" %>
+    <%#= render "shared/footer" %>
   </body>
 </html>

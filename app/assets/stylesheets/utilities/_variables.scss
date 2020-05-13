@@ -17,9 +17,11 @@
 // Declare all variables here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$background-color: #36393f/*#F5F7FB*/;
-$error-background-color: #EFE6E6;
+$background-color: rgb(54,57,63) /*#2f3136 #202225#F5F7FB*/;
+$error-background-color: #2f3136 /*#202225*/;
 //$button-color-blue: #467FCF;
 $button-color-blue: #b9bbbe;
 $header-height: 65px;
-$footer-height: 50px;
+$footer-height: 45px;
+$primary-color: #7289da//#FE5452 //#FF141A;
+//$primary-color-lighten: #40444b;
