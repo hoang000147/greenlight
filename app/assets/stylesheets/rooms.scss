@@ -141,12 +141,18 @@
   text-decoration: line-through;
 }
 
-
 .background-image {
-  background-image: url("books.jpg");
+  background-image: url("https://raw.githubusercontent.com/hoang000147/greenlight/v2-alpha/app/assets/images/background.png");
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center bottom;
+  //background-attachment: fixed;
+  background-position: center;
+  height: 40vh;
+}
+
+@media only screen and (max-width: 992px) {
+  .background-image {
+    height: auto;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -154,6 +160,3 @@
     display: none;
   }
 }
-
-
-

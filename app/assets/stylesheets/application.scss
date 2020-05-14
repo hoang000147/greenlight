@@ -92,6 +92,12 @@ p.subtitle-custom {
   font-size : 25px;
 }
 
+@media only screen and (max-width: 992px) {
+  p.subtitle-custom {
+    font-size: 20px;
+  }
+}
+
 label.form-label {
   color : $primary-color;
 }
@@ -254,6 +260,7 @@ table {
 #sidebarCollapse  {
   float:left; 
   margin-left:10px;
+  //background-color: grey !important;
 }
 
 
@@ -311,7 +318,13 @@ a[data-toggle="collapse"] {
     display: none;
   }
 
+  #sidebarCollapse {
+    display: none;
+  }
+
   html, body {
     font-family:  "Comic Sans MS", "cursive", "serif" !important;
   }
 }
+
+

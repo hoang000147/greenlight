@@ -20,22 +20,22 @@
   </div>
 <% end %>
 
-<div class="background pb-1">
+<div class="background-image background pb-4">
   <div class="container">        
     <div class="row pt-7">
       <div class="col-lg-8 col-sm-12">
         <div id="room-title" class="display-3 form-inline <%= 'edit_hover_class' if current_user.main_room != @room %>" data-path="<%= update_settings_path(@room) %>">
           <% if current_user.main_room == @room %>
-            <h1 contenteditable=false id="user-text" class="display-3 text-left mb-3 font-weight-400"><%= @room.name %></h1>
+            <h1 contenteditable=false id="user-text" class="display-3 text-left mb-3 font-weight-400" style="color: black;"><%= @room.name %></h1>
             <a class="enable-click"><i class="fas fa-star align-top home-indicator ml-2" ></i></a>
           <% else %>
-            <h1 contenteditable=false id="user-text" class="display-3 text-left mb-3 font-weight-400"><%= @room.name %></h1>
+            <h1 contenteditable=false id="user-text" class="display-3 text-left mb-3 font-weight-400" style="color: black;"><%= @room.name %></h1>
             <a><i id="edit-room" class="fas fa-magic align-top home-indicator ml-2" data-edit-room="<%= @room.uid %>"></i></a>
           <% end %>
         </div>
         <h4 class="text-left mb-6"><%= @room.sessions %> <%= t("room.sessions") %> | <%= @recordings.length %> <%= t("room.recordings") %></h4>
         <% unless exceeds_limit %>
-          <label class="custom-label"><%= t("room.invite_participants") %></label>
+          <label class="custom-label" style="color: black;"><%= t("room.invite_participants") %></label>
           <div class="row">
             <div class="col-lg-6 col-md-12 mt-2">
               <div class="input-icon invite-link-input">
