@@ -68,40 +68,7 @@
             <%= t("room.room_limit_exceeded", difference: @diff) %>
           </div>
         <% end %>
-      
-
-        <div class="sidebar col-2 pt-2 active">
-          <ul class="sidebar active">
-            <br>
-              <% current_user.ordered_rooms.each do |room| %>
-                <li>
-                  <div class=" col">
-                    <%= link_to room do %>
-                      <%= render "rooms/components/room_block", room: room %>
-                    <% end %>
-                  </div>
-                </li>
-              <% end %>
-              
-              <% if shared_access_allowed %>
-                <% current_user.shared_rooms.each do |room| %>
-                  <li>
-                    <div class="col">
-                      <%= link_to room do %>
-                        <%= render "rooms/components/shared_room_block", room: room %>
-                      <% end %>
-                    </div>
-                  </li>
-                <% end %>             
-              <% end %>           
-              
-              <% unless room_limit_exceeded %>
-                <li>
-                  <%= render "rooms/components/create_room_block"%>
-                </li>
-              <% end %>
-          </ul>
-        </div>
+        <%= render "shared/sidebar" %>
       <% end %>
     
       <div>
