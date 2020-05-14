@@ -1,5 +1,5 @@
 <div class="sidebar col-2 pt-2 active">
-  <!--ul class="sidebar active">
+  <ul class="sidebar active">
     <br>
       <% current_user.ordered_rooms.each do |room| %>
         <li>
@@ -28,9 +28,9 @@
           <%= render "rooms/components/create_room_block"%>
         </li>
       <% end %>
-  </ul-->
+  </ul>
 
-  <div class="list-group list-group-transparent">
+  <!--div class="list-group list-group-transparent">
     <% current_user.ordered_rooms.each do |room| %>
       <div class= "col list-group-item list-group-item-action">
         <%= link_to room do %>
@@ -44,5 +44,5 @@
         <%= render "rooms/components/create_room_block"%>
       </li>
     <% end %>
-  </div>
+  </div-->
 </div>
