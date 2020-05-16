@@ -136,7 +136,7 @@ $(document).on('turbolinks:load', function(){
     })
   }
 
-  $('#time-option-checkbox').on('click', function () {
+  /*$('#time-option-checkbox').on('click', function () {
     $('#time-option').toggleClass('active');
   })
 
@@ -156,7 +156,7 @@ $(document).on('turbolinks:load', function(){
     }
     else {        
         $("#Header").hide();
-    }
+    }*/
 });
 
 function showCreateRoom(target) {
