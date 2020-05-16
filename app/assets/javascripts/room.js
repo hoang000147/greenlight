@@ -141,6 +141,11 @@ $(document).on('turbolinks:load', function(){
   })
 
     $("#room_open_time").click(function () {
+
+      var open_time_select =  $("#room_open_time").val();
+      var selectedItem = select.options[select.selectedIndex].value;
+      createCookie("selectedItem",selectedItem);
+
         var closed = $("#Header").is(":hidden");
         if (closed)
             $("#Header").show();
