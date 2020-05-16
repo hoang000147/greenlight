@@ -47,10 +47,34 @@ module Joiner
     end
   end
 
+  
+
   def join_room(opts)
     room_settings = JSON.parse(@room[:room_settings])
 
-    if room_running?(@room.bbb_id) || @room.owned_by?(current_user) || room_settings["anyoneCanStart"]
+    if room_settings[lockRoom]
+      if !@room.owned_by?(current_user)
+        search_params = params[@room.invite_path] || params
+          @search, @order_column, @order_direction, pub_recs =
+          public_recordings(@room.bbb_id, search_params.permit(:search, :column, :direction), true)
+
+          @pagy, @public_recordings = pagy_array(pub_recs)
+
+          # They need to wait until the meeting begins.
+          render :wait_by_lock
+      end
+    elsif !check_room_time
+      if !@room.owned_by?(current_user)
+        search_params = params[@room.invite_path] || params
+        @search, @order_column, @order_direction, pub_recs =
+        public_recordings(@room.bbb_id, search_params.permit(:search, :column, :direction), true)
+
+        @pagy, @public_recordings = pagy_array(pub_recs)
+
+        # They need to wait until the meeting begins.
+        render :wait_by_time
+      end
+    elsif room_running?(@room.bbb_id) || @room.owned_by?(current_user) || room_settings["anyoneCanStart"]
 
       # Determine if the user needs to join as a moderator.
       opts[:user_is_moderator] = @room.owned_by?(current_user) || room_settings["joinModerator"] || @shared_room
@@ -107,5 +131,31 @@ module Joiner
     }
 
     guest_id
+  end
+
+  #Check if room in open time if turned on
+  def check_room_time
+    room_settings = JSON.parse(@room[:room_settings])
+
+    return true unless room_settings["openTime"] 
+
+    begin_time = room_settings["beginTime"]
+    end_time = room_settings["endTime"]
+    begin_date = room_settings["beginDate"]
+    end_date = room_settings["endDate"]
+
+    begin_string = begin_date + " " + begin_time
+    end_string = end_date + " " + end_time
+
+    current_time = DateTime.now
+    time_zone = DateTime.now.getlocal.zone
+    early = DateTime.strptime(begin_string, '%Y-%m-%d %H:%M')
+    early = early.change(:offset => "+0700")
+    late = DateTime.strptime(end_string, '%Y-%m-%d %H:%M')
+    late = late.change(:offset => "+0700")
+    #early = DateTime.new(current_time.year, current_time.month, current_time.day, beginHour, beginMinute, 0, current_time.utc_offset)
+    #late  = DateTime.new(current_time.year, current_time.month, current_time.day, endHour, endMinute, 0, current_time.utc_offset)
+
+    current_time.between?(early, late)
   end
 end

@@ -135,6 +135,10 @@ $(document).on('turbolinks:load', function(){
       }
     })
   }
+
+  $('#time-option-checkbox').on('click', function () {
+    $('#time-option').toggleClass('active');
+  })
 });
 
 function showCreateRoom(target) {
@@ -144,10 +148,16 @@ function showCreateRoom(target) {
   $("#room_access_code").val(null)
 
   $("#createRoomModal form").attr("action", $("body").data('relative-root'))
+  $("#room_lock_room").prop("checked", false)
   $("#room_mute_on_join").prop("checked", false)
   $("#room_require_moderator_approval").prop("checked", false)
   $("#room_anyone_can_start").prop("checked", false)
   $("#room_all_join_moderator").prop("checked", false)
+  $("#room_open_time").prop("checked", false)
+  $("#room_start_date").val(null)
+  $("#room_start_time").val(null)
+  $("#room_end_date").val(null)
+  $("#room_end_time").val(null)
 
   //show all elements & their children with a create-only class
   $(".create-only").each(function() {
@@ -204,10 +214,16 @@ function updateCurrentSettings(settings_path){
   // Get current room settings and set checkbox
   $.get(settings_path, function(room_settings) {
     var settings = JSON.parse(room_settings)
+    $("#room_lock_room").prop("checked", settings.lockRoom)
     $("#room_mute_on_join").prop("checked", settings.muteOnStart)
     $("#room_require_moderator_approval").prop("checked", settings.requireModeratorApproval)
     $("#room_anyone_can_start").prop("checked", settings.anyoneCanStart)
     $("#room_all_join_moderator").prop("checked", settings.joinModerator)
+    $("#room_open_time").prop("checked", settings.openTime)
+    $("#room_start_date").val(settings.startDate)
+    $("#room_start_time").val(settings.startTime)
+    $("#room_end_date").val(settings.endDate)
+    $("#room_end_time").val(settings.endTime)
   })
 }
 

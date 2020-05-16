@@ -43,6 +43,14 @@
               </span>
             </div>
 
+            <% if Rails.configuration.room_features.include? "lock-room" %>
+              <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block">
+                <span class="custom-switch-description"><%= t("modal.room_settings.lock_room")%></span>
+                <%= f.check_box :lock_room, class: "custom-switch-input", checked: false %>
+                <span class="custom-switch-indicator float-right cursor-pointer"></span>
+              </label>
+            <% end %>
+
             <% if Rails.configuration.room_features.include? "mute-on-join" %>
               <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block">
                 <span class="custom-switch-description"><%= t("modal.room_settings.mute")%></span>
@@ -75,11 +83,43 @@
               </label>
             <% end %>
 
+            <% if Rails.configuration.room_features.include? "open-time" %>
+              <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block">
+                <span class="custom-switch-description"><%= t("modal.room_settings.open_time")%></span>
+                <%= f.check_box :open_time, class: "custom-switch-input", checked: false %>
+                <span class="custom-switch-indicator float-right cursor-pointer"></span>
+              </label>             
+            <% end %>
+
+            <label class="form-inline pl-0 mt-3 w-100 text-left d-flex" >
+              <span class="custom-switch-description"><%= t("modal.room_settings.begin_time")%></span>
+              <div class="col-4 mr-3">
+                <input id="room_start_date" class="form-control round-border-input" type="date" name="lock_time[startDate]">
+              </div>
+              <div class="col-3">
+                <input id="room_start_time" class="form-control round-border-input" type="time" name="lock_time[startTime]" >
+              </div>             
+            </label>
+
+            <label class="form-inline pl-0 mb-3 w-100 text-left d-flex" >
+              <span class="custom-switch-description"><%= t("modal.room_settings.end_time")%></span>
+              <div class="col-4 mr-3">
+                <input id="room_end_date" class="form-control round-border-input" type="date" name="lock_time[endDate]">
+              </div>
+              <div class="col-3">
+                <input id="room_end_time" class="form-control round-border-input" type="time" name="lock_time[endTime]">
+              </div>
+              
+            </label>
+
+            <%= f.text_field :room_settings, placeholder: t("settings.account.fullname") %>
+
             <label id="auto-join-label" class="create-only custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block">
               <span class="custom-switch-description"><%= t("modal.create_room.auto_join") %></span>
               <%= f.check_box :auto_join, class: "custom-switch-input", checked: false %>
               <span class="custom-switch-indicator float-right cursor-pointer"></span>
             </label>
+
           <div class="mt-4">
             <%= f.submit t("modal.create_room.create"), class: "create-only btn btn-primary btn-block" %>
             <%= f.submit t("modal.room_settings.update"), class: "update-only btn btn-primary btn-block" %>
