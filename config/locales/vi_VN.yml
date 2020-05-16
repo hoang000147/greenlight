@@ -47,6 +47,10 @@ vi_VN:
         info: Xóa cache được lưu trữ của nhà cung cấp. Điều này buộc một yêu cầu mới cho thông tin được cập nhật
         title: Xóa cache của nhà cung cấp
         button: Xóa cache
+      clear_auth:
+        info: Xóa trình xác thực hiện tại cho người dùng, và cho phép họ đăng nhập lại bằng phương thức xác thực khác
+        title: Xóa trình xác thực hiện tại
+        button: Xóa xác thực
       color:
         info: Thay đổi màu thông thường sẽ thay đổi cả màu tối và màu sáng. Màu tối và màu sáng sau đó có thể được thay đổi riêng lẻ
         title: Màu chủ đạo
@@ -74,7 +78,7 @@ vi_VN:
           invite: Tham gia qua lời mời
           open: Cho phép đăng ký
       rooms:
-        info: Giới hạn số lượng phòng mà người dùng có thể có (bao gồm cả Phòng gia đình). Cài đặt này không áp dụng cho quản trị viên.
+        info: Giới hạn số lượng phòng mà người dùng có thể có (bao gồm cả Phòng Chính). Cài đặt này không áp dụng cho quản trị viên.
         title: Số phòng cho mỗi người dùng
       shared_access:
         info: Thay đổi cài đặt thành tắt sẽ xóa nút này khỏi danh sách tùy chọn phòng, ngăn người dùng chia sẻ phòng
@@ -143,6 +147,7 @@ vi_VN:
         delete: Xóa
         edit: Chỉnh sửa
         edit_roles: Chỉnh sửa vai trò
+        perm_delete: Xóa vĩnh viễn
         unban: Hủy cấm người dùng
         undelete: Hủy xóa
       table:
@@ -364,13 +369,13 @@ vi_VN:
       title: Cài đặt Phòng
       update: Cập nhật Phòng
       client: Chọn chế độ sử dụng
-      join_moderator:
+      join_moderator: Tất cả người dùng tham gia vào phòng với tư cách moderator
       mute: Tắt tiếng người dùng khi tham gia
-      open_time: Dat gio mo Phong
-      require_approval:
-      start_from: Start from
-      end_at: End at
-      start: Allow any user to start this meeting
+      open_time: Đặt giờ mở phòng
+      require_approval: Yêu cầu phê duyệt của moderator trước khi tham gia
+      start_from: Bắt đầu từ
+      end_at: Kết thúc lúc
+      start: Cho phép bất kỳ người dùng nào bắt đầu cuộc họp này
       footer_text: Điều chỉnh phòng của bạn có thể được thực hiện bất cứ lúc nào.
     rename_room:
       name_placeholder: "Nhập mới tên phòng... "
@@ -403,16 +408,17 @@ vi_VN:
   password_different_notice: Xác nhận mật khẩu không khớp.
   provider:
     google: Google
-    office365:
+    office365: Office 365
     twitter: Twitter
-    ldap:
+    ldap: LDAP
   recaptcha:
     errors:
       recaptcha_unreachable: "Rất tiếc, chúng tôi không thể xác thực phản hồi reCAPTCHA. Vui lòng thử lại."
       verification_failed: "xác minh reCAPTCHA không thành công, vui lòng thử lại."
   recording:
-    all_recordings: Tất cả bản Ghi hình
-    email: Email Recording
+    all_recordings: Tất cả bản ghi hình
+    email: Email bản ghi hình
+    error: Đã xảy ra lỗi cho khi lấy lại %{count} bản ghi hình
     no_recordings: "Phòng này không có bản %{inject}ghi hình nào."
     no_user_recordings: Bạn hiện không có bản ghi hình nào.
     no_matched_recordings: "Không có bản %{inject} ghi hình nào phù hợp với tìm kiếm của bạn."
@@ -428,85 +434,100 @@ vi_VN:
       public: Công khai
       unlisted: Không liệt kê
     format:
-      notes:
-      podcast:
+      notes: Ghi chú
+      podcast: Tệp âm thanh
       presentation: Bản trình chiếu
-      statistics:
-      video:
+      statistics: Số liệu thống kê
+      video: Video
   registration:
     approval:
-      fail:
-      signup:
+      fail: Tài khoản của bạn chưa được phê duyệt. Nếu đã nhiều ngày kể từ khi bạn đăng ký, vui lòng liên hệ với quản trị viên của bạn.
+      signup: Tài khoản của bạn đã được tạo thành công. Nó đã được gửi đến một quản trị viên để phê duyệt.
     banned:
-      fail: 
+      fail: Bạn không có quyền truy cập vào ứng dụng này. Nếu bạn tin rằng đây là một sai lầm, vui lòng liên hệ với quản trị viên của bạn.
     deprecated:
-      new_signin:
-      twitter_signin:
-      twitter_signup:
-      merge_success:
+      new_signin: Chọn một phương thức đăng nhập mới cho tài khoản của bạn. Tất cả các phòng của bạn từ tài khoản cũ của bạn sẽ được chuyển sang tài khoản mới
+      twitter_signin: Đăng nhập qua Twitter không được chấp nhận nữa và sẽ bị xóa trong phiên bản tiếp theo. Nhấp vào <a href="%{link}"> đây </a> để chuyển tài khoản của bạn sang một cách thức đăng nhập khác.
+      twitter_signup: Đăng ký qua Twitter không được chấp nhận nữa. Vui lòng sử dụng một phương thức đăng ký khác
+      merge_success: Hợp nhất thành công tài khoản twitter của bạn với tài khoản mới của bạn. Tài khoản twitter cũ của bạn đã bị xóa
     invite:
-      fail:
-      no_invite:
+      fail: Mã của bạn không hợp lệ hoặc đã hết hạn. Nếu bạn tin rằng đây là một sai lầm, vui lòng liên hệ với quản trị viên của bạn.
+      no_invite: Bạn không có lời mời tham gia. Vui lòng liên hệ với quản trị viên của bạn để nhận được lời mời.
+  remove: Xóa
   rename: Đổi tên
   reset_password:
     subtitle: Đặt lại mật khẩu
     password: Mật khẩu mới
     confirm: Xác nhận mật khẩu mới
     update: Cập nhật Mật khẩu
+    auth_change: Phương thức xác thực đã thay đổi. Vui lòng kiểm tra email của bạn để đặt mật khẩu của bạn.
   roles:
-    admin:
+    active: Active
+    admin: Admin
     banned: Bị cấm
-    pending:
+    deleted: Đã xóa
+    pending: Đang chờ xử lý
     user: Người dùng
   room:
-    access_code_required:
+    access_code_required: Vui lòng nhập mã truy cập hợp lệ để tham gia vào phòng
     create_room: Tạo Phòng
-    create_room_error: Có lỗi khi tạo phòng
+    create_room_error: Đã xảy ra lỗi khi tạo phòng
     create_room_success: Phòng được tạo thành công
-    enter_the_access_code:
-    invalid_provider:
+    delete:
+      home_room: Không thể xóa Phòng Chính của người dùng
+      success: Xóa phòng thành công
+      fail: Không thể xóa phòng (%{error})
+    enter_the_access_code: Nhập mã truy cập của phòng
+    invalid_provider: Bạn đã nhập một url không hợp lệ. Vui lòng kiểm tra url và thử lại.
     invited: Bạn đã được mời tham gia
     invite_participants: Mời Người tham gia
     join: Tham gia
     last_session: "Phiên cuối cùng trên %{session}"
-    login:
+    login: Đi vào
     owner: Người sở hữu
+    owner_banned: Phòng này hiện không khả dụng
     no_room:
-      description:
-      edit_profile:
-      go_to:
-      invalid_room_uid:
-      placeholder:
-      no_recent_rooms:
-      recent_rooms:
-      title:
+      description: Nhập url phòng hoặc id phòng cho phòng bạn muốn tham gia.
+      edit_profile: Chỉnh sửa hồ sơ người dùng
+      go_to: Vào phòng
+      invalid_room_uid: Url/uid phòng bạn nhập không hợp lệ.
+      placeholder: url/uid phòng
+      no_recent_rooms: Bạn không có phòng nào mà bạn tham gia gần đây
+      recent_rooms: Đi tới một phòng mà bạn tham gia gần đây
+      title: Tham gia vào một phòng
     no_sessions: Phòng này chưa có phiên nào!
     recordings: Bản ghi hình của Phòng
-    room_limit:
-    room_limit_exceeded:
+    room_limit: Bạn đã đạt đến số lượng phòng tối đa được phép
+    room_limit_exceeded: Bạn đã vượt quá số lượng phòng cho phép. Vui lòng xóa %{difference} phòng để truy cập vào phòng này.
     sessions: Phiên
     settings: Cài đặt Phòng
+    share: Quản lý truy cập
+    shared_by: Chia sẻ bởi %{email}
+    remove_shared_access_success: Xóa thành công phòng được chia sẻ khỏi danh sách phòng của bạn
+    remove_shared_access_error: Đã xảy ra lỗi trong khi xóa phòng được chia sẻ khỏi danh phòng sách của bạn
+    shared_access_success: Phòng được chia sẻ thành công
+    shared_access_error: Đã xảy ra lỗi trong khi chia sẻ phòng
     start: Bắt đầu
     unavailable: Phòng này hiện không có sẵn do email của người sở hữu không được xác minh.
-    update_settings_error: Có lỗi khi cập nhật cài đặt phòng
+    update_settings_error: Đã xảy ra lỗi trong khi cập nhật cài đặt phòng
     update_settings_success: Cài đặt phòng được cập nhật thành công
     wait:
-      message:
+      message: Cuộc họp chưa bắt đầu.
       auto: Bạn sẽ tự động tham gia khi phòng bắt đầu.
     timelock:
-      message: This room is not opened yet.
-      auto: Please comeback another time.
+      message: Phòng này chưa được mở.
+      auto: Vui lòng quay lại vào lúc khác.
     ownerlock:
-      message: This room is locked by owner.
-      auto: Please comeback another time.
+      message: Phòng này bị khóa bởi chủ phòng.
+      auto: Vui lòng quay lại vào lúc khác.
   settings:
     account:
       fullname: Họ và tên
       language: Ngôn ngữ
-      provider: Đối tác cấp tài khoản
-      image: Hình ảnh
+      provider: Cung cấp bởi Greenlight
+      image: Hình ảnh hồ sơ
       image_url: Đường đẫn URL hình ảnh hồ sơ
-      roles:
+      roles: Vai trò người dùng
       subtitle: Cập nhật thông tin Tài khoản
       title: Thông tin Tài khoản
     delete:
@@ -530,9 +551,10 @@ vi_VN:
   terms:
     accept: "Tôi chấp nhận %{href}"
     accept_existing: Tôi chấp nhận các điều khoản và điều kiện này.
-    title: Điều khoản và điều khiện.
+    title: Điều khoản và điều kiện.
   test_install: >
-    Việc triển khai này đang sử dụng một máy chủ thử nghiệm được cấu hình sẵn, bạn nên thay thế máy chủ này bằng máy chủ của riêng bạn. Để biết chi tiết, xem %{href}.
+    Việc triển khai này đang sử dụng một máy chủ thử nghiệm được cấu hình sẵn, bạn nên thay thế máy chủ này bằng máy chủ của riêng bạn. 
+    Để biết thêm chi tiết, xem %{href}.
   update: Cập nhật
   verify:
     accept: Xác thực
@@ -544,3 +566,4 @@ vi_VN:
     signin: Vui lòng đăng nhập để truy cập vào tài khoản của bạn.
     title: Xác thực email của bạn
     verification: Xác minh
+    

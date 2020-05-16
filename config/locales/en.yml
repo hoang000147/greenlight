@@ -516,10 +516,10 @@ en:
       auto: You will automatically join when the meeting starts.
     timelock:
       message: This room is not opened yet.
-      auto: Please comeback another time.
+      auto: Please come back another time.
     ownerlock:
       message: This room is locked by owner.
-      auto: Please comeback another time.
+      auto: Please come back another time.
   settings:
     account:
       fullname: Full name
@@ -566,3 +566,4 @@ en:
     signin: Please sign in to access your account.
     title: Verify your email
     verification: Verification
+    
