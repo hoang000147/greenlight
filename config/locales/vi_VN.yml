@@ -331,7 +331,9 @@ vi_VN:
       mute: Tắt tiếng người dùng khi tham gia
       open_time: Dat gio mo Phong
       require_approval:
-      start:
+      start_from: Start from
+      end_at: End at
+      start: Allow any user to start this meeting
       footer_text: Điều chỉnh phòng của bạn có thể được thực hiện bất cứ lúc nào.
     rename_room:
       name_placeholder: "Nhập mới tên phòng... "

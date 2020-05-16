@@ -373,8 +373,8 @@ en:
       mute: Mute users when they join
       require_approval: Require moderator approval before joining
       open_time: Set room's open time
-      start: Start from
-      end: End at
+      start_from: Start from
+      end_at: End at
       start: Allow any user to start this meeting
       footer_text: Adjustment to your room can be done at anytime.
     rename_room:
