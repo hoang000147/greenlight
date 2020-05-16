@@ -364,13 +364,13 @@ vi_VN:
       title: Cài đặt Phòng
       update: Cập nhật Phòng
       client: Chọn chế độ sử dụng
-      join_moderator: Tất cả người dùng tham gia vào phòng với tư cách moderator
-      mute: Tắt tiếng người dùng khi tham gia vào phòng
-      open_time: Đặt giờ mở phòng
-      require_approval: Yêu cầu phê duyệt của moderator trước khi tham gia vào phòng
-      start: Bắt đầu từ
-      end: Kết thúc tại
-      start: Cho phép bất kỳ người dùng nào bắt đầu cuộc họp này
+      join_moderator:
+      mute: Tắt tiếng người dùng khi tham gia
+      open_time: Dat gio mo Phong
+      require_approval:
+      start_from: Start from
+      end_at: End at
+      start: Allow any user to start this meeting
       footer_text: Điều chỉnh phòng của bạn có thể được thực hiện bất cứ lúc nào.
     rename_room:
       name_placeholder: "Nhập mới tên phòng... "
