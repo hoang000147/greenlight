@@ -136,9 +136,27 @@ $(document).on('turbolinks:load', function(){
     })
   }
 
-  $('#time-option-checkbox').on('click', function () {
+  /*$('#time-option-checkbox').on('click', function () {
     $('#time-option').toggleClass('active');
   })
+
+    $("#room_open_time").click(function () {
+        var closed = $("#Header").is(":hidden");
+        if (closed)
+            $("#Header").show();
+        else
+            $("#Header").hide();
+
+        setCookie("open", closed, 365);
+    });
+
+    var openToggle = getCookie("open");    
+    if (openToggle=="true") {        
+        $("#Header").show();
+    }
+    else {        
+        $("#Header").hide();
+    }*/
 });
 
 function showCreateRoom(target) {
