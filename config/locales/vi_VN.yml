@@ -364,10 +364,11 @@ vi_VN:
       title: Cài đặt Phòng
       update: Cập nhật Phòng
       client: Chọn chế độ sử dụng
-      join_moderator: Tất cả người dùng tham gia vào phòng với tư cách moderator
-      mute: Tắt tiếng người dùng khi tham gia vào phòng
-      require_approval: Yêu cầu phê duyệt của moderator trước khi tham gia vào phòng
-      start: Cho phép bất kỳ người dùng nào bắt đầu cuộc họp này
+      join_moderator:
+      mute: Tắt tiếng người dùng khi tham gia
+      open_time: Dat gio mo Phong
+      require_approval:
+      start:
       footer_text: Điều chỉnh phòng của bạn có thể được thực hiện bất cứ lúc nào.
     rename_room:
       name_placeholder: "Nhập mới tên phòng... "
@@ -490,6 +491,12 @@ vi_VN:
     wait:
       message:
       auto: Bạn sẽ tự động tham gia khi phòng bắt đầu.
+    timelock:
+      message: This room is not opened yet.
+      auto: Please comeback another time.
+    ownerlock:
+      message: This room is locked by owner.
+      auto: Please comeback another time.
   settings:
     account:
       fullname: Họ và tên

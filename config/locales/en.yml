@@ -372,6 +372,9 @@ en:
       join_moderator: All users join as moderators
       mute: Mute users when they join
       require_approval: Require moderator approval before joining
+      open_time: Set room's open time
+      start: Start from
+      end: End at
       start: Allow any user to start this meeting
       footer_text: Adjustment to your room can be done at anytime.
     rename_room:
@@ -511,6 +514,12 @@ en:
     wait:
       message: The meeting hasn't started yet.
       auto: You will automatically join when the meeting starts.
+    timelock:
+      message: This room is not opened yet.
+      auto: Please comeback another time.
+    ownerlock:
+      message: This room is locked by owner.
+      auto: Please comeback another time.
   settings:
     account:
       fullname: Full name

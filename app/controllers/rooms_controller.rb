@@ -189,7 +189,7 @@ class RoomsController < ApplicationController
       @room.update_attributes(
         name: options[:name],
         room_settings: room_settings_string,
-        access_code: options[:access_code]
+        access_code: options[:access_code],
       )
 
       flash[:success] = I18n.t("room.update_settings_success")
@@ -258,6 +258,12 @@ class RoomsController < ApplicationController
     end
   end
 
+  def lock_time
+    respond_to do |format|
+      format.json { render body: @room.lock_time.to_json }
+    end
+  end
+
   # GET /:room_uid/logout
   def logout
     logger.info "Support: #{current_user.present? ? current_user.email : 'Guest'} has left room #{@room.uid}"
@@ -278,11 +284,32 @@ class RoomsController < ApplicationController
   private
 
   def create_room_settings_string(options)
+    #get lock_time then parse it to json
+    #lock_time = create_lock_time_string()
+    lock_time = params[:lock_time].to_json
+    lock_time_json = JSON.parse(lock_time)
+
+    start_time = lock_time_json["startTime"]
+    end_time = lock_time_json["endTime"]
+    start_date = lock_time_json["startDate"]
+    end_date = lock_time_json["endDate"]
+
+    start_string = start_date + " " + start_time
+    end_string = end_date + " " + end_time
+    
     room_settings = {
+      "lockRoom": options[:lock_room] == "1",
       "muteOnStart": options[:mute_on_join] == "1",
       "requireModeratorApproval": options[:require_moderator_approval] == "1",
       "anyoneCanStart": options[:anyone_can_start] == "1",
       "joinModerator": options[:all_join_moderator] == "1",
+      "openTime": options[:open_time] == "1",
+      "startTime": start_time,
+      "endTime": end_time,
+      "startDate": start_date,
+      "endDate": end_date,
+      "startFrom": start_string,
+      "endAt": end_string, 
     }
 
     room_settings.to_json
@@ -290,7 +317,7 @@ class RoomsController < ApplicationController
 
   def room_params
     params.require(:room).permit(:name, :auto_join, :mute_on_join, :access_code,
-      :require_moderator_approval, :anyone_can_start, :all_join_moderator)
+      :require_moderator_approval, :anyone_can_start, :all_join_moderator, :open_time, :lock_time)
   end
 
   # Find the room from the uid.

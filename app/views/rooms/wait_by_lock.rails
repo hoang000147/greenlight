@@ -1,0 +1,11 @@
+<%= render 'rooms/components/room_event', render_recordings: true do %>
+  <div class="row">
+    <div class="col-9">
+      <h3 style="color: white;"><%= t("room.ownerlock.message") %></h3>
+      <h4 class="text-muted"><%= t("room.ownerlock.auto") %></h4>
+    </div>
+    <div class="col-3">
+      <div class="loader align-bottom mt-3"></div>
+    </div>
+  </div>
+<% end %>
