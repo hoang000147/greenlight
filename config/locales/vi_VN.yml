@@ -527,7 +527,7 @@ vi_VN:
       provider: Cung cấp bởi Greenlight
       image: Hình ảnh hồ sơ
       image_url: Đường đẫn URL hình ảnh hồ sơ
-      roles: Vai trò người dùng
+      roles: Vai trò
       subtitle: Cập nhật thông tin Tài khoản
       title: Thông tin Tài khoản
     delete:
