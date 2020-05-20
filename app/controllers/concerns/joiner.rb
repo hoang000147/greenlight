@@ -52,7 +52,7 @@ module Joiner
   def join_room(opts)
     room_settings = JSON.parse(@room[:room_settings])
 
-    if room_settings[lockRoom]
+    if room_settings["lockRoom"]
       if !@room.owned_by?(current_user)
         search_params = params[@room.invite_path] || params
           @search, @order_column, @order_direction, pub_recs =
@@ -139,22 +139,16 @@ module Joiner
 
     return true unless room_settings["openTime"] 
 
-    begin_time = room_settings["beginTime"]
-    end_time = room_settings["endTime"]
-    begin_date = room_settings["beginDate"]
-    end_date = room_settings["endDate"]
+    start_from = room_settings["startFrom"]
+    end_at = room_settings["endAt"]
 
-    begin_string = begin_date + " " + begin_time
-    end_string = end_date + " " + end_time
-
+    # using GMT+7 (Vietnam) timezone
     current_time = DateTime.now
     time_zone = DateTime.now.getlocal.zone
-    early = DateTime.strptime(begin_string, '%Y-%m-%d %H:%M')
+    early = DateTime.strptime(start_from, '%Y-%m-%d %H:%M')
     early = early.change(:offset => "+0700")
-    late = DateTime.strptime(end_string, '%Y-%m-%d %H:%M')
+    late = DateTime.strptime(end_at, '%Y-%m-%d %H:%M')
     late = late.change(:offset => "+0700")
-    #early = DateTime.new(current_time.year, current_time.month, current_time.day, beginHour, beginMinute, 0, current_time.utc_offset)
-    #late  = DateTime.new(current_time.year, current_time.month, current_time.day, endHour, endMinute, 0, current_time.utc_offset)
 
     current_time.between?(early, late)
   end

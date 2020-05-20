@@ -138,9 +138,14 @@ $(document).on('turbolinks:load', function(){
 
   /*$('#time-option-checkbox').on('click', function () {
     $('#time-option').toggleClass('active');
-  })
+  })*/
 
-    $("#room_open_time").click(function () {
+    /*$("#room_open_time").click(function () {
+      var setiings = 
+      var open_time_select =  settings.openTime;
+      //var selectedItem = select.options[select.selectedIndex].value;
+      createCookie("selectedOpenTime", open_time_select);
+
         var closed = $("#Header").is(":hidden");
         if (closed)
             $("#Header").show();
