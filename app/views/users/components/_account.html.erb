@@ -31,6 +31,9 @@
         </div>
       </div>
     </div>
+    
+    <br>
+
     <%= f.label t("settings.account.language"), class: "form-label" %>
     <%= f.select :language, language_options, {}, { class: "form-control custom-select" } %>
 
@@ -60,16 +63,22 @@
     <%= f.label t("settings.account.image"), class: "form-label mt-5" %>
     <div class="row">
       <div class="col-2">
-        <% if @user.image.blank? %>
+        <% if @user.image.attached? %>
+          <span class="avatar avatar-xxl mr-5 mt-2"><image src="<%=(url_for(@user.image))%>"></span>
+        <% else %>
+          <span class="avatar avatar-xxl mr-5 mt-2 bg-dark text-white"><%= @user.name.first %></span>
+        <% end %>
+        <!-- <% if @user.image.blank? %>
           <span class="avatar avatar-xxl mr-5 mt-2 bg-dark text-white"><%= @user.name.first %></span>
         <% else %>
           <span class="avatar avatar-xxl mr-5 mt-2" style="background-image: url(<%= @user.image %>)"></span>
-        <% end %>
+        <% end %> -->
       </div>
-
-      <div class="col-10 mt-5">
-        <%= f.text_field :image, class: "form-control #{form_is_invalid?(@user, :image)}", placeholder: t("settings.account.image_url") %>
-      </div>
+      
+      <%= f.file_field :image %>
+      <!-- <div class="col-10 mt-5">
+        <%= f.text_field :image, class: "form-control #{form_is_invalid?(@user, :image)}", placeholder: t("settings.account.image_url") %> 
+      </div> -->
     </div>
   </div>
   
