@@ -75,7 +75,9 @@
         <% end %> -->
       </div>
       
-      <%= f.file_field :image %>
+      <div class="col-10 mt-5">
+        <%= f.file_field :image, class: "form-control #{form_is_invalid?(@user, :image)}" %>
+      </div>
       <!-- <div class="col-10 mt-5">
         <%= f.text_field :image, class: "form-control #{form_is_invalid?(@user, :image)}", placeholder: t("settings.account.image_url") %> 
       </div> -->
@@ -83,8 +85,6 @@
   </div>
   
   <%= f.label t("settings.account.provider"), class: "form-label" %>
-  <% #= f.label t("greenlight"), class: "form-label" %>
-  <% #= f.text_field :provider, class: "form-control", readonly: "" %>
 
   <div class="card-footer">
     <%= f.submit t("update"), class: "btn btn-primary float-right ml-4" %>   
