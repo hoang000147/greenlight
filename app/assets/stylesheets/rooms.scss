@@ -153,6 +153,14 @@
   .background-image {
     height: auto;
   }
+  .room-block {
+    background-color: $background-color !important;
+    border-radius : 20px;
+  }
+
+  #create-room-block {
+    background-color: $background-color;
+  }
 }
 
 @media only screen and (min-width: 992px) {
