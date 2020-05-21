@@ -20,6 +20,7 @@ vendor/bundle
 # Ignore storage
 /storage/**
 /storage/**/**
+/storage
 
 # Ignore production paths.
 /db/production
