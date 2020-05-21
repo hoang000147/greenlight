@@ -44,9 +44,14 @@ module UsersHelper
   # Returns language selection options for user edit
   def language_options
     locales = I18n.available_locales
-    locales.delete(:vi_VN)
-    language_opts = [['<<< ' + t("language_default") + ' >>>', "default"]]
-    locales.each do |locale|
+
+    # initialize array language_opts with first element (vi_VN)
+    locale = locales[0]
+    language_mapping = I18n::Language::Mapping.language_mapping_list[locale.to_s.gsub("_", "-")]
+    language_opts = [['<<<' + language_mapping["nativeName"] + '>>>', "default"]]
+    
+    # skip first element
+    locales.drop(1).each do |locale|
       language_mapping = I18n::Language::Mapping.language_mapping_list[locale.to_s.gsub("_", "-")]
       language_opts.push([language_mapping["nativeName"], locale.to_s])
     end
