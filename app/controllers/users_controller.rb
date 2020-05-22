@@ -102,10 +102,13 @@ class UsersController < ApplicationController
         else
           # New passwords don't match.
           @user.errors.add(:password_confirmation, I18n.t("errors.password.not_match"))
+          flash[:error] = I18n.t("errors.password.not_match") 
         end
       else
         # Original password is incorrect, can't update.
-        @user.errors.add(:password, I18n.t("errors.password.incorrect"))
+        # @user.errors.add(:password, I18n.t("errors.password.incorrect"))
+        @user.errors.add(:password)
+        flash[:error] = I18n.t("errors.password.incorrect") 
       end
 
       # Notify the user that their account has been updated.
