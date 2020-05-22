@@ -60,11 +60,6 @@ html, body {
   font-size: 15px;
 }
 
-.sidebar.col-2.pt-2{
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-
 .room-block {
   &:not(.current) {
     .table:hover{
