@@ -105,7 +105,7 @@ class UsersController < ApplicationController
         end
       else
         # Original password is incorrect, can't update.
-        @user.errors.add(:password, "is incorrect")
+        @user.errors.add(:password, I18n.t("errors.password.incorrect"))
       end
 
       # Notify the user that their account has been updated.
