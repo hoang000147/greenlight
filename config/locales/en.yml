@@ -375,6 +375,7 @@ en:
       join_moderator: All users join as moderators
       mute: Mute users when they join
       require_approval: Require moderator approval before joining
+      lock_room: Lock room
       open_time: Set room's open time
       start_from: Start from
       end_at: End at

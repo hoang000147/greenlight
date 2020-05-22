@@ -350,7 +350,7 @@ vi_VN:
       warning: Quyết định này là cuối cùng. Bạn sẽ <b>không thể</b> phục hồi dữ liệu liên quan.
     delete_room:
       confirm: "Bạn có chắc chắn muốn xóa %{room}?"
-      dselete: "Tôi chắc chắn, hãy xóa phòng này."
+      delete: "Tôi chắc chắn, hãy xóa phòng này."
       keep: "Nghĩ lại, tôi sẽ giữ nó."
       warning: Bạn sẽ <b>không thể</b> phục hồi căn phòng này
       recording_warning: hay bất kỳ một trong %{recordings_num} bản ghi liên quan nào.
@@ -376,6 +376,7 @@ vi_VN:
       mute: Tắt tiếng người dùng khi tham gia
       open_time: Đặt giờ mở phòng
       require_approval: Yêu cầu phê duyệt của moderator trước khi tham gia
+      lock_room: Khóa phòng
       start_from: Bắt đầu từ
       end_at: Kết thúc lúc
       start: Cho phép bất kỳ người dùng nào bắt đầu cuộc họp này
