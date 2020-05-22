@@ -17,6 +17,7 @@
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 
 class UsersController < ApplicationController
+   ActiveStorage::BlobsController
   include Pagy::Backend
   include Authenticator
   include Emailer
@@ -100,7 +101,7 @@ class UsersController < ApplicationController
           @user.password = user_params[:new_password]
         else
           # New passwords don't match.
-          @user.errors.add(:password_confirmation, "doesn't match")
+          @user.errors.add(:password_confirmation, I18n.t("errors.password.not_match"))
         end
       else
         # Original password is incorrect, can't update.

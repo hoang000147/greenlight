@@ -218,6 +218,9 @@ en:
       user_missing:
         help: Please verify the URL and try again
         message: The URL that you have entered is not valid.
+    password:
+      not_match: doesn't match
+      incorrect: is incorrect
     title: Errors
     unauthorized:
       message: You do not have access to this application

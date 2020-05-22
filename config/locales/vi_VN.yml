@@ -218,6 +218,9 @@ vi_VN:
       user_missing:
         help: Vui lòng kiểm tra lại URL và thử lại
         message: URL mà bạn đã nhập không hợp lệ.
+    password:
+      not_match: không trùng khớp
+      incorrect: không đúng
     title: Lỗi
     unauthorized:
       message: Bạn không có quyền truy cập vào ứng dụng này
