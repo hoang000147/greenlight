@@ -21,8 +21,6 @@ require 'bbb_api'
 class User < ApplicationRecord
   include Deleteable
 
-  has_one_attached :image
-
   attr_accessor :reset_token, :activation_token
   after_create :setup_user
 
@@ -51,6 +49,8 @@ class User < ApplicationRecord
 
   # We don't want to require password validations on all accounts.
   has_secure_password(validations: false)
+  
+  mount_uploader :image, ImageUploader
 
   class << self
     include AuthValues

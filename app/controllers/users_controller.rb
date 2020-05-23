@@ -17,7 +17,6 @@
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 
 class UsersController < ApplicationController
-    ActiveStorage::BlobsController
   include Pagy::Backend
   include Authenticator
   include Emailer
@@ -223,9 +222,5 @@ class UsersController < ApplicationController
     redirect_to current_user.main_room if current_user &&
                                           @user != current_user &&
                                           !current_user.admin_of?(@user, "can_manage_users")
-  end
-
-  def image_upload
-    @user.image.attach(params[:image])
   end
 end
