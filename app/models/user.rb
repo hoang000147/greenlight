@@ -51,6 +51,7 @@ class User < ApplicationRecord
   has_secure_password(validations: false)
   
   mount_uploader :image, ImageUploader
+  validate :image
 
   class << self
     include AuthValues
