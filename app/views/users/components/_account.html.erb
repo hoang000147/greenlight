@@ -74,13 +74,14 @@
           <span class="avatar avatar-xxl mr-5 mt-2" style="background-image: url(<%= @user.image %>)"></span>
         <% end %> -->
       </div>
-      
-      <div class="col-10 mt-5">
-        <%= f.file_field :image, class: "form-control #{form_is_invalid?(@user, :image)}" %>
+      <div>
+        <div class="mb-2 rounded">
+          <%= f.file_field :image, class: "form-control #{form_is_invalid?(@user, :image)}" %>
+        </div>
+        <div class="mt-2 rounded">
+          <%= f.text_field :remote_image_url, class: "form-control #{form_is_invalid?(@user, :image)}", placeholder: t("settings.account.image_url") %> 
+        </div>
       </div>
-      <!-- <div class="col-10 mt-5">
-        <%= f.text_field :image, class: "form-control #{form_is_invalid?(@user, :image)}", placeholder: t("settings.account.image_url") %> 
-      </div> -->
     </div>
   </div>
   
