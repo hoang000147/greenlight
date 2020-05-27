@@ -65,6 +65,7 @@
       <div class="col-2">
         <% if @user.image? %>
           <%= image_tag(@user.image.url, id: "user-image", class: "avatar avatar-xxl mr-5 mt-2") %>
+          
         <% else %>
           <span class="avatar avatar-xxl mr-5 mt-2 bg-dark text-white"><%= @user.name.first %></span>
         <% end %>
@@ -74,12 +75,23 @@
           <span class="avatar avatar-xxl mr-5 mt-2" style="background-image: url(<%= @user.image %>)"></span>
         <% end %> -->
       </div>
-      <div>
+      <div class="col">
         <div class="mb-2 rounded">
           <%= f.file_field :image, class: "form-control #{form_is_invalid?(@user, :image)}" %>
         </div>
-        <div class="mt-2 rounded">
+        <!-- <div class="mt-2 rounded">
           <%= f.text_field :remote_image_url, class: "form-control #{form_is_invalid?(@user, :image)}", placeholder: t("settings.account.image_url") %> 
+        </div> -->
+        <div>
+          <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block">
+            <span class="custom-switch-description"><%= t("settings.account.remove_image")%></span>
+            <%= f.check_box :remove_image, class: "custom-switch-input", checked: false %>
+            <span class="custom-switch-indicator float-right cursor-pointer"></span>
+          </label>
+            <!--<%= label_tag :remove_image do %>
+              <%= f.check_box :remove_image%>
+              Remove image
+            <% end %>-->
         </div>
       </div>
     </div>

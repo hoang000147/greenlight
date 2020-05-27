@@ -534,6 +534,7 @@ vi_VN:
       roles: Vai trò
       subtitle: Cập nhật thông tin Tài khoản
       title: Thông tin Tài khoản
+      remove_image: Xoá ảnh
     delete:
       button: "Có, tôi muốn xóa tài khoản của tôi."
       disclaimer: "Nếu bạn chọn xóa tài khoản của mình, nó sẽ <b>KHÔNG THỂ</b> phục hồi. Tất cả thông tin liên quan đến tài khoản của bạn, bao gồm cài đặt phòng và bản ghi hình sẽ bị xóa."
