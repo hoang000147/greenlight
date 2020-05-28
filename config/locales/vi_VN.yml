@@ -372,7 +372,7 @@ vi_VN:
       title: Cài đặt Phòng
       update: Cập nhật Phòng
       client: Chọn chế độ sử dụng
-      join_moderator: Tất cả người dùng tham gia vào phòng với tư cách moderator
+      join_moderator: Tất cả người dùng vào phòng với tư cách moderator
       mute: Tắt tiếng người dùng khi tham gia
       open_time: Đặt giờ mở phòng
       require_approval: Yêu cầu phê duyệt của moderator trước khi tham gia
@@ -534,7 +534,7 @@ vi_VN:
       roles: Vai trò
       subtitle: Cập nhật thông tin Tài khoản
       title: Thông tin Tài khoản
-      remove_image: Xoá ảnh
+      remove_image: Xoá ảnh đại diện
     delete:
       button: "Có, tôi muốn xóa tài khoản của tôi."
       disclaimer: "Nếu bạn chọn xóa tài khoản của mình, nó sẽ <b>KHÔNG THỂ</b> phục hồi. Tất cả thông tin liên quan đến tài khoản của bạn, bao gồm cài đặt phòng và bản ghi hình sẽ bị xóa."

@@ -65,7 +65,6 @@
       <div class="col-2">
         <% if @user.image? %>
           <%= image_tag(@user.image.url, id: "user-image", class: "avatar avatar-xxl mr-5 mt-2") %>
-          
         <% else %>
           <span class="avatar avatar-xxl mr-5 mt-2 bg-dark text-white"><%= @user.name.first %></span>
         <% end %>
@@ -88,10 +87,6 @@
             <%= f.check_box :remove_image, class: "custom-switch-input", checked: false %>
             <span class="custom-switch-indicator float-right cursor-pointer"></span>
           </label>
-            <!--<%= label_tag :remove_image do %>
-              <%= f.check_box :remove_image%>
-              Remove image
-            <% end %>-->
         </div>
       </div>
     </div>
