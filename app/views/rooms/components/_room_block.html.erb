@@ -16,8 +16,10 @@
 
  <div data-path="<%= update_settings_path(room) %>" data-room-access-code="<%= room.access_code %>" class="room-block mb-3">
    <div class="p-0">
-    <table class="table table-vcenter text-wrap table-no-border">
-      <tbody class="no-border-top">
+    <table class="table table-vcenter text-wrap table-no-border" style="table-layout: fixed;
+  width: 100%; ">
+
+      <tr class="no-border-top">
         <td>
           <span class="stamp stamp-md bg-primary">
            <small>
@@ -32,7 +34,7 @@
         <td>
 	        <p class="font-weight-normal">	
            <div>
-             <h4 contenteditable="false" class="m-0 force-text-normal room-name-text" ><%= room.name %></h4>
+             <h4 contenteditable="false" class="m-0 force-text-normal room-name-text" style ="overflow: hidden; text-overflow: ellipsis;"><%= room.name %></h4>
            </div>
            <div style="display: none">
              <input class="form-control input-sm w-100 h-4 room-name-editable" value="<%= room.name %>">
@@ -55,13 +57,13 @@
               <% end %>
               <% unless room == current_user.main_room %>
                 <a href="" data-toggle="modal" data-target="#deleteRoomModal" data-path="<%= room_path(room) %>" data-name="<%= room.name %>" class="delete-room dropdown-item">
-                  <i class="dropdown-icon far fa-trash-alt"></i> <%= t("delete") %>
+                  <i class="dropdown-icon fas fa-trash-alt"></i> <%= t("delete") %>
                 </a>
               <% end %>
             </div>
           </div>
         </td>
-      </tbody>
+      </tr>
     </table>
   </div>
  </div>

@@ -1,9 +1,9 @@
-<div class="sidebar col-2 pt-2 active">
+<div class="sidebar col-2 pt-2 active" style ="overflow: auto; position: fixed; max-height: 80%; border-width:4px; border-style:inset;">
   <ul class="sidebar active">
     <br>
       <% current_user.ordered_rooms.each do |room| %>
         <li>
-          <div class=" col">
+          <div class="col">
             <%= link_to room do %>
               <%= render "rooms/components/room_block", room: room %>
             <% end %>
