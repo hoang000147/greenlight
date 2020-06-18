@@ -34,7 +34,7 @@
         <td>
 	        <p class="font-weight-normal">	
            <div>
-             <h4 contenteditable="false" class="m-0 force-text-normal room-name-text" style ="overflow: hidden; text-overflow: ellipsis;"><%= room.name %></h4>
+             <h4 contenteditable="false" class="m-0 force-text-normal room-name-text" style ="overflow: hidden; word-break: break-word;"><%= room.name %></h4>
            </div>
            <div style="display: none">
              <input class="form-control input-sm w-100 h-4 room-name-editable" value="<%= room.name %>">
@@ -46,7 +46,7 @@
             <a href="#" data-toggle="dropdown" data-display="static" class="icon">
               <i class="fas fa-ellipsis-v px-4"></i>
             </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-left">
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-right">
               <a href="" data-toggle="modal" data-target="#createRoomModal" class="update-room dropdown-item" data-settings-path="<%= room_settings_path(room) %>">
                 <i class="dropdown-icon fas fa-cog"></i> <%= t("room.settings") %>
               </a>
