@@ -14,11 +14,10 @@
 %>
 
 
- <div data-path="<%= update_settings_path(room) %>" data-room-access-code="<%= room.access_code %>" class="room-block mb-3">
-   <div class="p-0">
-    <table class="table table-vcenter text-wrap table-no-border" style="table-layout: fixed;
-  width: 100%; ">
+<div data-path="<%= update_settings_path(room) %>" data-room-access-code="<%= room.access_code %>" class="card room-block mb-3">
 
+  <div class="p-0 card-header">
+    <table class="table table-vcenter text-wrap table-no-border" style="table-layout: fixed; width: 100%;">
       <tr class="no-border-top">
         <td>
           <span class="stamp stamp-md bg-primary">
@@ -42,11 +41,18 @@
 	        </p>
         </td>
         <td class="text-right">
-          <div class="item-action dropdown" data-display="static">
-            <a href="#" data-toggle="dropdown" data-display="static" class="icon">
+          <div>
+            <a href="#" data-toggle="collapse" data-target="#<%= room.uid %>" class="icon">
               <i class="fas fa-ellipsis-v px-4"></i>
             </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-right">
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+  <div id="<%= room.uid %>" class="collapse" >
+    <div class="card-body">    
               <a href="" data-toggle="modal" data-target="#createRoomModal" class="update-room dropdown-item" data-settings-path="<%= room_settings_path(room) %>">
                 <i class="dropdown-icon fas fa-cog"></i> <%= t("room.settings") %>
               </a>
@@ -60,10 +66,6 @@
                   <i class="dropdown-icon fas fa-trash-alt"></i> <%= t("delete") %>
                 </a>
               <% end %>
-            </div>
-          </div>
-        </td>
-      </tr>
-    </table>
+    </div>
   </div>
  </div>

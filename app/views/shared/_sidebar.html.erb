@@ -29,20 +29,4 @@
         </li>
       <% end %>
   </ul>
-
-  <!--div class="list-group list-group-transparent">
-    <% current_user.ordered_rooms.each do |room| %>
-      <div class= "col list-group-item list-group-item-action">
-        <%= link_to room do %>
-          <%= render "rooms/components/room_block", room: room %>
-        <% end %>
-      </div>
-    <% end %>
-
-    <% unless room_limit_exceeded %>
-      <li>
-        <%= render "rooms/components/create_room_block"%>
-      </li>
-    <% end %>
-  </div-->
 </div>
