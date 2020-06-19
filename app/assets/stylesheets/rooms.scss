@@ -66,22 +66,20 @@
       h4, i{
         color: #D4D4D4;
       }
-      i.fas.fa-chalkboard-teacher, i.fas.fa-home{
+      i.fas.fa-chalkboard-teacher, i.fas.fa-home, i.fas.fa-hashtag, i.fas.fa-star{
       color: #D4D4D4;
       }
       border-radius: 15px;
+      background-color: #40444b;
     }
     h4, i{
       color: #8F8F8F;
     }
-    i.fas.fa-chalkboard-teacher, i.fas.fa-home{
+    i.fas.fa-chalkboard-teacher, i.fas.fa-home, i.fas.fa-hashtag, i.fas.fa-star{
       color: $background-color;
     }
-    
-  }
-
-  background-color: inherit;
-  
+    background-color: inherit;
+  }  
 }
 
 #create-room-block {

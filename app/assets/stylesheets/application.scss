@@ -60,20 +60,6 @@ html, body {
   font-size: 15px;
 }
 
-.room-block {
-  &:not(.current) {
-    .table:hover{
-      i.fas.fa-hashtag, i.fas.fa-star{
-        color: #D4D4D4;
-        }
-      background-color: #40444b;
-      }
-    i.fas.fa-star, i.fas.fa-hashtag{
-      color: $background-color;
-    }
-  }    
-}
-
 a {
   text-decoration: none !important;
   cursor: pointer;
