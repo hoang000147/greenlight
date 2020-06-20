@@ -66,15 +66,16 @@
       h4, i{
         color: #D4D4D4;
       }
-      i.fas.fa-chalkboard-teacher, i.fas.fa-home{
+      i.fas.fa-chalkboard-teacher, i.fas.fa-home, i.fas.fa-hashtag, i.fas.fa-star{
       color: #D4D4D4;
       }
       border-radius: 15px;
+      background-color: #40444b;
     }
     h4, i{
       color: #8F8F8F;
     }
-    i.fas.fa-chalkboard-teacher, i.fas.fa-home{
+    i.fas.fa-chalkboard-teacher, i.fas.fa-home, i.fas.fa-hashtag, i.fas.fa-star{
       color: $background-color;
     }
     
@@ -142,11 +143,16 @@
 }
 
 .background-image {
-  background-image: url("https://raw.githubusercontent.com/hoang000147/greenlight/v2-alpha/app/assets/images/background.png");
-  background-repeat: no-repeat;
+  background-image: url("https://quickreachmedia.com/wp-content/uploads/2016/01/social-1116843-blackwhite.jpg");
+  background-repeat: repeat;
   //background-attachment: fixed;
   background-position: center;
   height: 40vh;
+}
+
+.wrapper{
+  background-image: url("https://cutewallpaper.org/21/social-media-wallpapers/Media-Wallpaper-40+-Group-Wallpapers.jpg");
+  background-repeat: repeat;
 }
 
 @media only screen and (max-width: 992px) {
