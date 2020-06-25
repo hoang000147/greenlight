@@ -60,7 +60,7 @@
 
   <body class="app-background" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
     <%= render "shared/header" %>
-    <div class="wrapper">
+    <div class="wrapper d-flex align-self-stretch justify-content-center">
       <% if current_user %>
         <% exceeds_limit = current_room_exceeds_limit(@room)%>
         <% if exceeds_limit%>
@@ -71,7 +71,7 @@
         <%= render "shared/sidebar" %>
       <% end %>
     
-      <div>
+      
         <% if bigbluebutton_endpoint_default? %>
           <div class="alert alert-icon alert-danger text-center mb-0">
             <div class="flash alert d-inline">
@@ -94,8 +94,10 @@
         <%= render 'shared/flash_messages' unless flash.empty? %>
 
         <%= yield %>
-      </div>
+      
     </div>
-    <%= render "shared/footer" %>
+    <div class="bottom">
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>
