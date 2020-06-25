@@ -167,11 +167,19 @@
   #create-room-block {
     background-color: $background-color;
   }
+  
+  .show-container {
+    display: relative !important;
+  }
 }
 
 @media only screen and (min-width: 992px) {
   #room_block_container {
     display: none;
+  }
+
+  .show-container {
+    display: flex !important;
   }
 }
 
