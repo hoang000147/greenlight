@@ -58,19 +58,19 @@
     </script>
   </head>
 
-  <body class="app-background" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
+  <body class="app-background wrapper" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
     <%= render "shared/header" %>
-    <div class="wrapper d-flex align-self-stretch justify-content-center">
-      <% if current_user %>
-        <% exceeds_limit = current_room_exceeds_limit(@room)%>
-        <% if exceeds_limit%>
-          <div class="alert alert-danger alert-dismissible text-center mb-0">
-            <%= t("room.room_limit_exceeded", difference: @diff) %>
-          </div>
+    <%= render "shared/sidebar" %>
+    <%= render 'shared/flash_messages' unless flash.empty? %>
+    <div class="d-flex">
+        <% if current_user %>
+          <% exceeds_limit = current_room_exceeds_limit(@room)%>
+          <% if exceeds_limit%>
+            <div class="alert alert-danger alert-dismissible text-center mb-0">
+              <%= t("room.room_limit_exceeded", difference: @diff) %>
+            </div>
+          <% end %>
         <% end %>
-        <%= render "shared/sidebar" %>
-      <% end %>
-    
       
         <% if bigbluebutton_endpoint_default? %>
           <div class="alert alert-icon alert-danger text-center mb-0">
@@ -91,13 +91,9 @@
           </div>
         <% end %>
 
-        <%= render 'shared/flash_messages' unless flash.empty? %>
-
         <%= yield %>
       
     </div>
-    <div class="bottom">
-      <%= render "shared/footer" %>
-    </div>
   </body>
+  <%= render "shared/footer" %>
 </html>

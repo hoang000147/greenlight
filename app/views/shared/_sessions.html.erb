@@ -13,13 +13,13 @@
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 %>
 
-<div class="sessions pb-5">
+
   <div class="container pt-6">
 
     <%= render "shared/components/subtitle", subtitle: (only_public ? t("recording.visibility.public") + " " : "") + title, search: true %>
     <div class="row">
       <div class="col-12">
-        <div class="card">
+        <div class="card" style="background-color: rgba(256, 256, 256, 0.1);">
           <div class="table-responsive" style="height: 500px;">
             <table id="recordings-table" class="table table-hover table-outline table-vcenter text-nowrap card-table">
               <thead>
@@ -123,4 +123,4 @@
       </div>
     </div>
   </div>
-</div>
+
