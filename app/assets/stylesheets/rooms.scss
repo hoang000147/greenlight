@@ -143,17 +143,20 @@
 }
 
 .background-image {
-  background-image: url("https://quickreachmedia.com/wp-content/uploads/2016/01/social-1116843-blackwhite.jpg");
+  //background-image: url("https://quickreachmedia.com/wp-content/uploads/2016/01/social-1116843-blackwhite.jpg");
   background-color: rgba(0, 0, 0, 0.5);
   //background-attachment: fixed;
-  background-position: center;
-  height: 40vh;
+  //background-position: center;
+  //height: 40vh;
 }
 
 .wrapper{
   //background-image: url("https://cutewallpaper.org/21/social-media-wallpapers/Media-Wallpaper-40+-Group-Wallpapers.jpg");
-  background-image: url("rsz_drew-beamer-se7vvkzyxti-unsplash.jpg");
-  background-repeat: repeat;
+  background: url("rsz_meeting-room(3).jpg");
+  // no-repeat 0, 0 #D1D4DB;
+  //background-blend-mode: darken;
+  //background-color: rgba(0, 0, 0, 1);
+  //background-repeat: repeat;
 }
 
 @media only screen and (max-width: 992px) {

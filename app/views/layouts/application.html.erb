@@ -58,7 +58,7 @@
     </script>
   </head>
 
-  <body class="app-background wrapper" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
+  <body class="app-background wrapper " data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
     <%= render "shared/header" %>
     <%= render "shared/sidebar" %>
     <%= render 'shared/flash_messages' unless flash.empty? %>

@@ -19,12 +19,12 @@
     <%= render "shared/components/subtitle", subtitle: (only_public ? t("recording.visibility.public") + " " : "") + title, search: true %>
     <div class="row">
       <div class="col-12">
-        <div class="card" style="background-color: rgba(256, 256, 256, 0.1);">
+        <div class="card" style="background-color: rgba(256, 256, 256, 0.85);">
           <div class="table-responsive" style="height: 500px;">
             <table id="recordings-table" class="table table-hover table-outline table-vcenter text-nowrap card-table">
               <thead>
                 <tr>
-                  <th data-header="name" data-order="<%= @order_column == "name" ? @order_direction : "none" %>">
+                  <th data-header="name" data-order="<%= @order_column == "name" ? @order_direction : "none" %>" style="color: black;">
                     <%= t("recording.table.name") %>
                     <% if @order_column == "name" && @order_direction == "desc" %>
                       ↓
@@ -33,11 +33,11 @@
                     <% end %>
                   </th>
                   <% if recording_thumbnails? %>
-                    <th>
+                    <th style="color: black;">
                       <%= t("recording.table.thumbnails") %>
                     </th>
                   <% end %>
-                  <th class="text-left" data-header="length" data-order="<%= @order_column == "length" ? @order_direction : "none" %>">
+                  <th class="text-left" data-header="length" data-order="<%= @order_column == "length" ? @order_direction : "none" %>" style="color: black;">
                     <%= t("recording.table.length") %>
                     <% if @order_column == "length" && @order_direction == "desc" %>
                       ↓
@@ -45,7 +45,7 @@
                       ↑
                     <% end %>
                   </th>
-                  <th class="text-left" data-header="users" data-order="<%= @order_column == "users" ? @order_direction : "none" %>">
+                  <th class="text-left" data-header="users" data-order="<%= @order_column == "users" ? @order_direction : "none" %>" style="color: black;">
                     <%= t("recording.table.users") %>
                     <% if @order_column == "users" && @order_direction == "desc" %>
                       ↓
@@ -53,7 +53,7 @@
                       ↑
                     <% end %>
                   </th>
-                  <th class="text-left" data-header="visibility" data-order="<%= @order_column == "visibility" ? @order_direction : "none" %>">
+                  <th class="text-left" data-header="visibility" data-order="<%= @order_column == "visibility" ? @order_direction : "none" %>" style="color: black;">
                     <%= t("recording.table.visibility") %>
                     <% if @order_column == "visibility" && @order_direction == "desc" %>
                       ↓
@@ -61,7 +61,7 @@
                       ↑
                     <% end %>
                   </th>
-                  <th data-header="formats" data-order="<%= @order_column == "formats" ? @order_direction : "none" %>">
+                  <th data-header="formats" data-order="<%= @order_column == "formats" ? @order_direction : "none" %>" style="color: black;">
                     <%= t("recording.table.formats") %>
                     <% if @order_column == "formats" && @order_direction == "desc" %>
                       ↓
