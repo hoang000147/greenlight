@@ -60,9 +60,8 @@
 
   <body class="app-background wrapper " data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
     <%= render "shared/header" %>
-    <%= render "shared/sidebar" %>
     <%= render 'shared/flash_messages' unless flash.empty? %>
-    <div class="d-flex">
+    <div class="d-flex justify-content-center">
         <% if current_user %>
           <% exceeds_limit = current_room_exceeds_limit(@room)%>
           <% if exceeds_limit%>
@@ -70,6 +69,7 @@
               <%= t("room.room_limit_exceeded", difference: @diff) %>
             </div>
           <% end %>
+          <%= render "shared/sidebar" %>
         <% end %>
       
         <% if bigbluebutton_endpoint_default? %>

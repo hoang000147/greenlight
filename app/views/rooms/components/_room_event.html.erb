@@ -13,8 +13,8 @@
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 %>
 
-<div class="background pb-9" room="<%= @room.uid %>" user="<%= current_user ? current_user.uid : "anonymous" %>" join-name="<%= @join_name %>">
-  <div class="container">
+<div class="p-2 col-lg-8" room="<%= @room.uid %>" user="<%= current_user ? current_user.uid : "anonymous" %>" join-name="<%= @join_name %>">
+    
     <div class="row pt-9">
       <div class="col-lg-12 col-sm-12">
         <h4 class="text-left"><%= t("room.invited") %></h4>
@@ -23,8 +23,8 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 form-inline mb-5 align-top">
+    
+      <div class="col-lg-12 col-md-12 col-sm-12 form-inline mb-5 align-top">
         <% if @room.owner.image.blank? %>
           <span class="avatar"><%= @room.owner.name.first %></span>
         <% else %>
@@ -33,11 +33,11 @@
         <h5 class="font-weight-normal ml-4 mt-3" style="color: white;"><%= @room.owner.name %> (<%= t("room.owner") %>)</h5>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="col-lg-9 col-md-9 col-sm-10">
         <%= yield %>
       </div>
-    </div>
-  </div>
+    
+  
 </div>
 
 <% if render_recordings %>
