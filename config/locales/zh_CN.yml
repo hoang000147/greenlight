@@ -161,7 +161,7 @@ zh_CN:
         username: 用户名
       title: 管理用户
   add_to_google_calendar: "添加到谷歌日历"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: VCP
   bigbluebutton_exception: 哎呀，启动会议出错！
   cancel: 取消
   cookies:
