@@ -233,7 +233,8 @@ vi_VN:
     designs: Tùy chỉnh Thiết kế
     authentication: Chứng thực người dùng
   footer:
-    powered_by: "Được phát triển bởi %{href}."
+    #powered_by: "Powered by %{href}."
+    powered_by: "Powered by BigBlueButton"
   forgot_password:
     subtitle: Quên mật khẩu
     email: Email

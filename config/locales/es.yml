@@ -200,7 +200,7 @@ es:
     designs: Diseño personalizado
     authentication: Autentificación de usuario
   footer:
-    powered_by: "Funciona con %{href}"
+    powered_by: "Powered by BigBlueButton"
   forgot_password:
     subtitle: Olvidé la contraseña
     email: Cuenta de correo

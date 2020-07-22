@@ -233,7 +233,8 @@ en:
     designs: Custom Designs
     authentication: User Authentication
   footer:
-    powered_by: Powered by %{href}.
+    #powered_by: Powered by %{href}.
+    powered_by: "Powered by BigBlueButton"
   forgot_password:
     subtitle: Forgot Password
     email: Email

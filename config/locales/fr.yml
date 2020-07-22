@@ -229,7 +229,7 @@ fr:
     designs: Designs personnalisés
     authentication: Authentification d'utilisateur
   footer:
-    powered_by: "Alimenté par %{href}."
+    powered_by: "Powered by BigBlueButton"
   forgot_password:
     subtitle: Mot de passe oublié
     email: Email
