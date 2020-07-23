@@ -265,7 +265,8 @@ en:
     search:
       start: Start searching...
   landing:
-    about: "%{href} is a simple front-end for your VCP open-source web conferencing server. You can create your own rooms to host sessions, or join others using a short and convenient link."
+    #about: "%{href} is a simple front-end for your VCP open-source web conferencing server. You can create your own rooms to host sessions, or join others using a short and convenient link."
+    about: "%{href} is a solution for your VCP web conferencing. You can create your own rooms to host sessions, or join others using a short and convenient link."
     welcome: Welcome to VCP.
     video: Watch our tutorial on using VCP
     upgrade: Show me how to upgrade to 2.0!

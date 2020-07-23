@@ -265,7 +265,7 @@ vi_VN:
     search:
       start: Bắt đầu tìm kiếm...  
   landing:
-    about: "%{href} là một giao diện cơ bản dành cho máy chủ hội nghị trực tuyến mã nguồn mở VCP của bạn. Bạn có thể tạo những phòng riêng của mình để tổ chức các phiên hoặc tham gia với những người khác bằng cách sử dụng một liên kết ngắn và thuận tiện."
+    about: "%{href} là một giải pháp dành cho hội nghị trực tuyến. Bạn có thể tạo những phòng riêng của mình để tổ chức các phiên hoặc tham gia với những người khác bằng cách sử dụng một liên kết ngắn và thuận tiện."
     welcome: Chào mừng bạn đến với VCP.
     video: Xem thêm video hướng dẫn sử dụng VCP của chúng tôi
     upgrade: Hãy chỉ cho tôi cách nâng cấp lên 2.0!
