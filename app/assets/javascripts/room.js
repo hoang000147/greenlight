@@ -35,11 +35,13 @@ $(document).on('turbolinks:load', function(){
       var success = document.execCommand("copy");
       if (success) {
         inviteURL.blur();
+        
         copy.addClass('btn-success');
-        copy.html("<i class='fas fa-check'></i>" + getLocalizedString("copied"))
+        copy.html("<i class='fas fa-check'></i>")
         setTimeout(function(){
           copy.removeClass('btn-success');
-          copy.html("<i class='fas fa-copy'></i>" + getLocalizedString("copy"))
+          //copy.addClass('btn-light')
+          copy.html("<i class='fas fa-copy'></i>")
         }, 2000)
       }
     });
