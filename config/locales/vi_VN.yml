@@ -234,7 +234,7 @@ vi_VN:
     authentication: Chứng thực người dùng
   footer:
     #powered_by: "Powered by %{href}."
-    powered_by: "Powered by BigBlueButton"
+    powered_by: "Phát triển bởi HADTech"
   forgot_password:
     subtitle: Quên mật khẩu
     email: Email
@@ -530,7 +530,7 @@ vi_VN:
     account:
       fullname: Họ và tên
       language: Ngôn ngữ
-      provider:  Powered by BigBlueButton
+      provider:  Phát triển bởi HADTech
       image: Hình ảnh hồ sơ
       image_url: Đường đẫn URL hình ảnh hồ sơ
       roles: Vai trò
