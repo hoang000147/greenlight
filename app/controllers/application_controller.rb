@@ -89,18 +89,12 @@ class ApplicationController < ActionController::Base
     render :migration_error, status: 500 unless ENV["DB_MIGRATE_FAILED"].blank?
   end
 
-  # Set language before loading the webpage
-  # before_action :set_locale
-  def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
-  end
-
   # Sets the appropriate locale.
   def user_locale(user = current_user)
-    locale = if user && user.language != "default"
+    locale = if user && user.language != 'default'
       user.language
     else
-      "vi_VN"
+      http_accept_language.language_region_compatible_from(I18n.available_locales)
     end
 
     begin
