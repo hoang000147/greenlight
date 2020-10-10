@@ -22,22 +22,19 @@
 
 <div class="pb-4">
   <div class="container">        
-    <div class="row pt-7">
-      <div class="col-lg-8 col-sm-12">
+    <div class="pt-7">
+      <div class="col-lg-8 col-sm-12" style="margin: 0 auto; text-align: center;">
         <div id="room-title" class="display-3 form-inline <%= 'edit_hover_class' if current_user.main_room != @room %>" data-path="<%= update_settings_path(@room) %>">
           <% if current_user.main_room == @room %>
-            <h1 contenteditable=false id="user-text" class="display-3 text-left mb-3 font-weight-400" style="color: white;"><%= @room.name %></h1>
-            <a class="enable-click"><i class="fas fa-star align-top home-indicator ml-2" ></i></a>
+            <h1 contenteditable=false id="user-text" class="marg-center display-3 text-center mb-3 font-weight-400" style="color: white;"><%= @room.name %></h1>
           <% else %>
-            <h1 contenteditable=false id="user-text" class="display-3 text-left mb-3 font-weight-400" style="color: white;"><%= @room.name %></h1>
-            <a><i id="edit-room" class="fas fa-magic align-top home-indicator ml-2" data-edit-room="<%= @room.uid %>"></i></a>
+            <h1 contenteditable=false id="user-text" class="marg-center display-3 text-center mb-3 font-weight-400 marg-center" style="color: white;"><%= @room.name %></h1>
           <% end %>
         </div>
-        <h4 class="text-left mb-6"><%= @room.sessions %> <%= t("room.sessions") %> | <%= @recordings.length %> <%= t("room.recordings") %></h4>
+        <h4 class="text-center mb-6"><%= @room.sessions %> <%= t("room.sessions") %> | <%= @recordings.length %> <%= t("room.recordings") %></h4>
         <% unless exceeds_limit %>
-          <label class="custom-label" style="color: white;"><%= t("room.invite_participants") %></label>
-          <div class="row">
-            <div class="col-lg-6 col-md-12 mt-2">
+
+            <div class="marg-center col-lg-6 col-md-12 mt-2 pb-5">
               <div class="input-icon invite-link-input">                
                 <span class="d-flex">
                   <span class="input-icon-addon">
@@ -47,8 +44,8 @@
                   <a id="copy" class="btn btn-copy btn-primary"><i class="fas fa-copy"></i></a>
                 </span>
               </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
+
+            <!--div class="col-lg-6 col-md-12">
               <div class="row">
                 <div class="col-lg-8 pl-0">
                   <% if Rails.configuration.enable_google_calendar_button %>
@@ -59,11 +56,12 @@
                   <% end %>
                 </div>
               </div>
-            </div>
+            </div-->
+
           </div>
         <% end %>
-      </div>
-      <div class="offset-lg-1 col-lg-3 col-sm-12 force-bottom mt-5">
+
+        <div class="marg-center offset-lg-1 col-lg-6 col-sm-12 force-bottom mt-5">
         <% if @room_running %>
           <%= button_to t("room.join"), room_path(@room), class: "btn btn-primary btn-block px-7 start-button float-right btn-sm", "data-disable": "" %>
         <% else %>
@@ -72,6 +70,8 @@
           <% end %>
         <% end %>
       </div>
+      </div>
+      
     </div>
 
     <div id="room_block_container" class="row pt-7 pb-5">
